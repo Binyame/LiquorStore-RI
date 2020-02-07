@@ -1,0 +1,97 @@
+/* ==========================================================================
+   Accordion shortcode styles
+   ========================================================================== */
+
+.qodef-accordion.qodef-layout--simple {
+	
+	.qodef-accordion-title {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin: 12px 0 0;
+		padding: 18px 20px;
+		letter-spacing: 0.08em;
+		transition: color .2s ease-out, background-color .2s ease-out;
+		cursor: pointer;
+		border: 1px solid $border-color;
+		background-color: #fff;
+		@include qodefTransform(translateZ(0px));
+		
+		&:not(.ui-state-active) {
+			transition: all 1.5s ease;
+		}
+		
+		&:first-child {
+			margin-top: 0;
+		}
+		
+		.qodef-accordion-mark {
+			position: relative;
+			flex-shrink: 0;
+			width: 20px;
+			height: 18px;
+			line-height: 1;
+			text-align: center;
+			
+			span {
+				position: absolute;
+				display: block;
+				font-size: 24px;
+				top: 50%;
+				transform: translateY(-50%);
+				transition: opacity .2s ease-out;
+				color: $text-color;
+				
+				&:before {
+					display: block;
+					line-height: inherit;
+				}
+				
+				&.qodef-icon--minus {
+					opacity: 0;
+				}
+				
+				&.qodef-icon--plus {
+					opacity: 1;
+				}
+			}
+		}
+		
+		&.ui-state-active {
+			border-bottom: 1px solid transparent;
+		}
+		
+		&.ui-state-active,
+		&.ui-state-hover {
+			
+			
+			.qodef-accordion-mark {
+				
+				span {
+					
+					
+					&.qodef-icon--minus {
+						opacity: 1;
+					}
+					
+					&.qodef-icon--plus {
+						opacity: 0;
+					}
+				}
+			}
+		}
+	}
+	
+	.qodef-accordion-content {
+		padding: 0 20px 22px;
+		margin: 0;
+		border: 1px solid $border-color;
+		border-top: 1px solid transparent;
+		background-color: #fff;
+		
+		p {
+			margin: 0;
+		}
+	}
+}

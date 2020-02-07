@@ -1,0 +1,126 @@
+/* ==========================================================================
+   Video Button shortcode start styles
+   ========================================================================== */
+
+.qodef-video-button {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	
+	img {
+		width: 100%;
+	}
+	
+	.qodef-m-play-text {
+		display: block;
+		position: absolute;
+		left: 48px;
+		bottom: 48px;
+		
+		@include qodefScreenSize768 {
+			left: 17px;
+			bottom: 17px;
+		}
+		
+		@include qodefScreenSize680 {
+			display: none;
+		}
+		
+		.qodef-m-play-title {
+			font-family: $heading-font;
+			font-size: 30px;
+			color: #fff;
+			line-height: 45px;
+			letter-spacing: 0.110em;
+		}
+		
+		.qodef-m-play-subtitle {
+			font-family: $text-font;
+			font-size: 15px;
+			font-style: italic;
+			color: $main-color-light;
+		}
+	}
+	
+	.qodef-m-play {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #fff;
+		font-size: 70px;
+		line-height: 1;
+
+		&:hover {
+
+			.qodef-m-play-inner {
+				svg {
+	
+					.video-button-circle {
+						stroke-dashoffset: 0;
+						stroke-dasharray: 700;
+					}
+				}
+			}
+		}
+
+		.qodef-m-play-inner {
+			svg {
+				display: block;
+				
+				@include qodefScreenSize680 {
+					max-width: 100px;
+				}
+
+				.video-button-stroke {
+					fill: none;
+					stroke: currentColor;
+					stroke-width: 2;
+					stroke-linejoin: round;
+					stroke-miterlimit: 10;
+					position: relative;
+					z-index: -1;
+				}
+
+				.video-button-circle {
+					fill: none;
+					stroke: currentColor;
+					transform-origin: center center;
+					stroke-dashoffset: 700;
+					stroke-dasharray: 700;
+					stroke-width: 4;
+					stroke-linejoin: round;
+					stroke-miterlimit: 10;
+					stroke-linecap: butt;
+					transform: rotate(-90deg);
+					transition: all 1s ease-out;
+				}
+			}
+		}
+		
+		span {
+			display: block;
+			line-height: inherit;
+			border-radius: 50%;
+			
+			&:before {
+				display: block;
+				line-height: inherit;
+			}
+			
+			&:hover span {
+				animation: qodefPulsebig 1.8s infinite;
+				
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Video Button shortcode end styles
+   ========================================================================== */

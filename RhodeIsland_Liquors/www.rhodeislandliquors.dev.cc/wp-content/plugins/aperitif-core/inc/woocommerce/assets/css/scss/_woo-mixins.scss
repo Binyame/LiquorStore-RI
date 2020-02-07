@@ -1,0 +1,191 @@
+/* ==========================================================================
+   Ratings mixins - start
+   ========================================================================== */
+
+@mixin qodefWooNoticeStyle() {
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: center;
+	padding: 20px 30px;
+	margin-bottom: 30px;
+	border: 1px solid $border-color;
+	
+	a {
+		margin-top: 10px;
+	}
+}
+
+@mixin qodefWooButtonsStyle($size: normal, $type: null) {
+	@include qodefButtonDefaultStyle();
+	@include qodefButtonSize($size);
+	cursor: pointer;
+	z-index: 3;
+	
+	@if ($type == 'outline') {
+		@include qodefButtonOutlinedColor();
+		
+		&:hover {
+			@include qodefButtonOutlinedHoverColor();
+		}
+	} @else {
+		@include qodefButtonFilledColor();
+		
+		&:hover {
+			@include qodefButtonFilledHoverColor();
+		}
+	}
+}
+
+@mixin qodefWooPriceStyle() {
+	position: relative;
+	display: flex;
+	align-items: center;
+	font-size: 18px;
+	font-style: italic;
+	margin: 6px 0 0;
+	color: $heading-color;
+	
+	del {
+		order: 2;
+		opacity: .5;
+		margin-left: 4px;
+	}
+	
+	ins {
+		order: 1;
+		text-decoration: none;
+	}
+}
+
+@mixin qodefWooRatingsStyle($color: $heading-color) {
+	@include qodefRelativeLayout();
+	line-height: 1;
+	
+	.qodef-m-inner {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+	}
+	
+	.qodef-m-star {
+		@include qodefWooRatingsStarStyle($color);
+		
+		&.qodef--active {
+			position: absolute;
+			top: 0;
+			left: 0;
+			overflow: hidden;
+			white-space: nowrap;
+		}
+	}
+}
+
+@mixin qodefWooRatingsStarStyle($color: null) {
+	font-size: 11px;
+	letter-spacing: .1em;
+	@if ($color) {
+		color: $color;
+	} @else {
+		color: $main-color;
+	}
+}
+
+@mixin qodefWooRatingsStarPseudoStarContent($active: false) {
+	@if ($active) {
+		content: "\e033\e033\e033\e033\e033";
+	} @else {
+		content: "\e031";
+	}
+}
+
+@mixin qodefWooRatingsStarPseudoStyle($color: null) {
+	@if ($color) {
+		@include qodefWooRatingsStarStyle($color);
+	} @else {
+		@include qodefWooRatingsStarStyle();
+	}
+	font-family: "ElegantIcons";
+	line-height: 1;
+	white-space: nowrap;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@mixin qodefWooCategoriesStyle() {
+	@include qodefRelativeLayout();
+	margin-bottom: 4px;
+
+	a {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		font-size: 15px;
+		font-style: italic;
+		color: $main-color;
+		z-index: 3;
+		
+		&:hover {
+			color: $main-color-hover;
+		}
+	}
+	
+	.qodef-category-separator {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		margin: 0 2px;
+		font-size: 15px;
+		color: $main-color;
+		
+		&:after {
+			content: '~';
+		}
+	}
+}
+
+@mixin qodefWooTemplatesHeadingStyle($margin: 0, $is_h3: false) {
+	$heading_tag: h3;
+	
+	@if ($is_h3) {
+		@if ($heading_tag != h3) {
+			@include qodefHeadingStyle($heading_tag);
+		}
+	} @else {
+		@include qodefHeadingStyle($heading_tag);
+	}
+	
+	margin: $margin;
+}
+
+@mixin qodefWooLabelsHeadingStyle($with-color: true) {
+	$heading_tag: h6;
+	
+	@include qodefHeadingStyle($heading_tag, $with-color);
+}
+
+@mixin qodefWooTemplatesListStyles($margin: 0) {
+	margin: $margin;
+	padding: 0;
+	list-style: none;
+	
+	li {
+		position: relative;
+		margin: 0;
+		padding: 15px 0;
+		border-bottom: 1px solid $border-color;
+		
+		p {
+			margin: 0;
+		}
+	}
+}
+
+@mixin qodefWooSelect2Style($width: 205px) {
+	width: auto;
+	min-width: $width;
+	margin: 0;
+}
+
+/* ==========================================================================
+   Ratings mixins - end
+   ========================================================================== */

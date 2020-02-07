@@ -1,0 +1,45 @@
+/* ==========================================================================
+   Swapping image gallery shortcode responsive style - begin
+   ========================================================================== */
+
+.qodef-swapping-image-gallery {
+	
+	@include qodefScreenSize1024 {
+		
+		.qodef-m-info {
+			flex-basis: 30%;
+		}
+	}
+	
+	@include qodefScreenSize1024 {
+		
+		.qodef-m-swapping-image-gallery-inner {
+			flex-wrap: wrap;
+		}
+		
+		.qodef-m-info {
+			flex-basis: 100%;
+			margin-right: 0;
+			margin-bottom: 30px;
+		}
+		
+		.qodef-m-image-holder {
+			flex-basis: 100%;
+		}
+		
+		.qodef-m-thumbnail {
+			width: 33.33333% !important;
+		}
+	}
+	
+	@include qodefScreenSize680 {
+		
+		h6 {
+			display: none;
+		}
+	}
+}
+
+/* ==========================================================================
+   Swapping image gallery shortcode responsive style - end
+   ========================================================================== */

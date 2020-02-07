@@ -1,0 +1,16 @@
+.qodef-button {
+
+	&.qodef-layout--outlined {
+		@include qodefButtonOutlinedColor();
+		overflow: hidden;
+
+		.qodef-m-text {
+			z-index: 123;
+			position: relative;
+		}
+
+		&:hover {
+			@include qodefButtonOutlinedHoverColor();
+		}
+	}
+}

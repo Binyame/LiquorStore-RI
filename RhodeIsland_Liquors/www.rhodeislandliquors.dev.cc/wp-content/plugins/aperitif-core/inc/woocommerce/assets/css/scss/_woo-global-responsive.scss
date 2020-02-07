@@ -1,0 +1,16 @@
+/* ==========================================================================
+   WooCommerce global responsive styles
+   ========================================================================== */
+
+.woocommerce-page {
+	
+	div.woocommerce {
+		
+		@include qodefScreenSize768 {
+			
+			.col2-set {
+				flex-wrap: wrap;
+			}
+		}
+	}
+}

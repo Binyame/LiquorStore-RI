@@ -1,0 +1,499 @@
+/* ==========================================================================
+   WooCommerce widget styles
+   ========================================================================== */
+
+// $wp-widgets-map input-fields-... variables are for select and for search elements
+
+//.post-type-archive {
+//
+//	#qodef-page-sidebar {
+//
+//		> .widget {
+//
+//			&:first-child {
+//				margin-top: 8px;
+//			}
+//		}
+//	}
+//}
+
+$wp-widgets-map: (
+		widget-margin: 53,
+		widget-title-margin: 22,
+		widget-title-color: null,
+		list-item-bottom-margin: 10,
+		text-color: null,
+		link-color: $text-color,
+		link-hover-color: $main-color,
+		input-fields-height: 55,
+		input-fields-side-padding: 20,
+		input-fields-text-size: 14,
+		input-fields-text-line-height: 24,
+		input-fields-text-color: #afa8a7,
+		input-fields-focus-text-color: #817c7b,
+		input-fields-background-color: transparent,
+		input-fields-focus-background-color: transparent,
+		input-fields-border-color: $border-color,
+		input-fields-focus-border-color: $border-focus-color,
+		input-fields-button-color: $text-color,
+		input-fields-button-hover-color: #2b2824
+);
+
+$wp-widgets-area-map: (
+		'': (),
+		'#qodef-page-footer': (
+				widget-title-color: #fff,
+				text-color: #ccc,
+				link-color: #ccc,
+				input-fields-border-color: #ccc,
+				input-fields-focus-border-color: $main-color
+		),
+		'.qodef-header--vertical .wpb_widgetised_column': (
+				input-fields-button-color: #8a8483,
+				input-fields-border-color: #8a8483,
+				input-fields-focus-border-color: $border-focus-color,
+				input-fields-focus-text-color: #c2c2c2,
+				input-fields-text-color: #8a8483,
+				input-fields-background-color: transparent,
+				widget-title-color: #fff,
+				text-color: #9d9796,
+				list-link-color: $main-color-light,
+				link-hover-color: $main-color,
+				link-color: $main-color-light,
+				input-fields-button-hover-color: #c2c2c2
+		)
+);
+
+.widget.woocommerce {
+	
+	.qodef-woo-product-title {
+		margin: 0;
+		font-style: normal;
+		max-width: 170px;
+	}
+	
+	.qodef-woo-ratings {
+		@include qodefWooRatingsStyle($main-color);
+	}
+	
+	.price {
+		@include qodefWooPriceStyle();
+		margin-top: -1px;
+	}
+	
+	button, .button {
+		@include qodefWooButtonsStyle(small);
+		
+		&:hover {
+			color: #fff !important;
+			background-color: #d77647 !important;
+		}
+	}
+	
+	.reviewer {
+		color: $heading-color;
+	}
+}
+
+@each $key, $values in $wp-widgets-area-map {
+	$wp-widgets-map-merged: map-merge($wp-widgets-map, $values);
+	
+	#{$key} .widget {
+		
+		&.widget_shopping_cart {
+			
+			.qodef-widget-title {
+				margin-bottom: calc(#{map-get($wp-widgets-map-merged, 'widget-title-margin')}px + 9px);
+			}
+			
+			.widget_shopping_cart_content {
+				@include qodefRelativeLayout();
+				
+				ul {
+					
+					li {
+						position: relative;
+						
+						a:not(.remove) {
+							position: relative;
+							display: flex;
+							align-items: center;
+							@include qodefWooLabelsHeadingStyle();
+							color: $heading-color;
+							
+							&:hover {
+								color: $main-color;
+							}
+						}
+						
+						img {
+							width: 64px;
+							min-height: 112px;
+							object-fit: cover;
+							margin-right: 20px;
+						}
+						
+						.remove {
+							position: absolute;
+							top: 0;
+							right: 0;
+							font-size: 0;
+							line-height: 1;
+							z-index: 2;
+							
+							&:after {
+								position: relative;
+								display: block;
+								padding: 0 3px;
+								font-family: 'ElegantIcons';
+								content: "\4d";
+								font-size: 18px;
+								line-height: 25px;
+							}
+						}
+					}
+				}
+				
+				.variation {
+					@include qodefRelativeLayout();
+					
+					> * {
+						display: inline-block;
+						vertical-align: middle;
+						margin: 0;
+						
+						p {
+							margin: 0;
+						}
+					}
+				}
+				
+				.quantity {
+					display: block;
+					position: absolute;
+					bottom: 0;
+					left: 85px;
+				}
+				
+				.total {
+					display: flex;
+					justify-content: space-between;
+					margin: 18px 0 0;
+					
+					strong {
+						font-weight: 400;
+					}
+				}
+				
+				.buttons {
+					position: relative;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					margin: 16px 0 0;
+					
+					> a:nth-child(2) {
+						@include qodefWooButtonsStyle(small, outline);
+					}
+					
+					> a {
+						padding-left: 0 !important;
+						padding-right: 0 !important;
+						width: calc(50% - 5px) !important;
+						text-align: center !important;
+					}
+				}
+			}
+		}
+		
+		// list widgets affected by negative margin from above ^^^
+		&.widget_product_categories,
+		&.widget_layered_nav {
+			margin-bottom: calc(#{map-get($wp-widgets-map-merged, 'widget-margin')}px - 8px);
+			
+			.select2 {
+				margin-bottom: 8px !important;
+			}
+			
+			button {
+				margin-bottom: 8px !important;
+			}
+		}
+		
+		&.widget_layered_nav {
+			
+			ul {
+				
+				li {
+					
+					&.chosen {
+						
+						a {
+							color: map-get($wp-widgets-map-merged, 'link-hover-color');
+						}
+					}
+				}
+			}
+		}
+		
+		&.widget_price_filter {
+			
+			.qodef-widget-title {
+				margin-bottom: calc(#{map-get($wp-widgets-map-merged, 'widget-title-margin')}px + 8px);
+			}
+			
+			.price_slider_wrapper {
+				
+				.ui-widget-content {
+					position: relative;
+					height: 2px;
+					background-color: #eae9e8;
+					border-radius: 0;
+					cursor: pointer;
+					
+					.ui-slider-handle {
+						position: absolute;
+						top: 50%;
+						transform: translateY(-50%);
+						height: 18px;
+						width: 2px;
+						background-color: $main-color;
+						outline: none;
+						z-index: 2;
+					}
+					
+					.ui-slider-range {
+						position: absolute;
+						display: block;
+						height: 100%;
+						background-color: $main-color;
+						border-radius: 0;
+						z-index: 1;
+					}
+				}
+			}
+			
+			.price_slider_amount {
+				position: relative;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				margin: 41px 0 0;
+				
+				.price_label {
+					font-size: 14px;
+				}
+				
+				.clear {
+					display: none;
+				}
+				
+				button {
+					
+					@media screen and (max-width: 1440px) {
+						padding: 8px 25px;
+					}
+				}
+			}
+		}
+		
+		&.widget_product_categories {
+			
+			li {
+				font-style: italic;
+			}
+			
+			select {
+				width: 100%;
+				max-width: 100%;
+				height: #{map-get($wp-widgets-map-merged, 'input-fields-height')}px;
+				margin: 0;
+				padding: #{(map-get($wp-widgets-map-merged, 'input-fields-height') - map-get($wp-widgets-map-merged, 'input-fields-text-line-height')) / 2}px #{map-get($wp-widgets-map-merged, 'input-fields-side-padding')}px;
+				font-family: inherit;
+				font-size: #{map-get($wp-widgets-map-merged, 'input-fields-text-size')}px;
+				line-height: #{map-get($wp-widgets-map-merged, 'input-fields-text-line-height')}px;
+				font-style: inherit;
+				font-weight: inherit;
+				color: map-get($wp-widgets-map-merged, 'input-fields-text-color');
+				background-color: map-get($wp-widgets-map-merged, 'input-fields-background-color');
+				border: 1px solid #{map-get($wp-widgets-map-merged, 'input-fields-border-color')};
+				border-radius: 0;
+				outline: none;
+			}
+		}
+		
+		&.widget_product_search {
+			
+			.qodef-search-form-inner {
+				@include qodefRelativeLayout();
+			}
+			
+			input,
+			button {
+				height: #{map-get($wp-widgets-map-merged, 'input-fields-height')}px;
+				padding: #{(map-get($wp-widgets-map-merged, 'input-fields-height') - map-get($wp-widgets-map-merged, 'input-fields-text-line-height')) / 2}px 0;
+				font-family: inherit;
+				font-weight: inherit;
+				line-height: #{map-get($wp-widgets-map-merged, 'input-fields-text-line-height')}px;
+				border-radius: 0;
+				outline: 0;
+				-webkit-appearance: none;
+			}
+			
+			input {
+				@include qodefRelativeLayout();
+				padding-left: #{map-get($wp-widgets-map-merged, 'input-fields-side-padding')}px;
+				padding-right: 66px;
+				font-size: #{map-get($wp-widgets-map-merged, 'input-fields-text-size')}px;
+				color: map-get($wp-widgets-map-merged, 'input-fields-text-color');
+				background-color: map-get($wp-widgets-map-merged, 'input-fields-background-color');
+				border: 1px solid map-get($wp-widgets-map-merged, 'input-fields-border-color');
+				transition: $border-color-transition;
+				
+				&:focus {
+					color: map-get($wp-widgets-map-merged, 'input-fields-focus-text-color');
+					border-color: map-get($wp-widgets-map-merged, 'input-fields-focus-border-color');
+				}
+				
+				@include qodefPlaceholder {
+					color: inherit;
+				}
+			}
+			
+			button {
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 66px;
+				font-size: 20px;
+				text-align: center;
+				color: map-get($wp-widgets-map-merged, 'input-fields-button-color');
+				background-color: transparent;
+				border: 0;
+				cursor: pointer;
+				transition: $color-transition;
+				
+				span {
+					display: block;
+					line-height: inherit;
+					
+					&:before {
+						display: block;
+						line-height: inherit;
+					}
+				}
+				
+				&:hover {
+					color: map-get($wp-widgets-map-merged, 'input-fields-button-hover-color') !important;
+					background: transparent !important;
+				}
+			}
+		}
+		
+		&.widget_products,
+		&.widget_recently_viewed_products,
+		&.widget_top_rated_products,
+		&.widget_recent_reviews {
+			
+			.qodef-widget-title {
+				margin-bottom: calc(#{map-get($wp-widgets-map-merged, 'widget-title-margin')}px + 9px);
+			}
+			
+			ul {
+				
+				li {
+					position: relative;
+					display: flex;
+					margin-bottom: 12px;
+					
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+			}
+			
+			.qodef-woo-product-image {
+				flex-shrink: 0;
+				margin-right: 17px;
+				
+				a, img {
+					position: relative;
+					display: block;
+				}
+				
+				img {
+					width: 64px;
+					min-height: 112px;
+					object-fit: cover;
+				}
+				
+				&:hover ~ .qodef-woo-product-content a {
+					color: map-get($wp-widgets-map-merged, 'link-hover-color');
+				}
+			}
+			
+			.qodef-woo-product-content {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+			
+			.qodef-woo-product-title {
+				
+				a {
+					color: inherit;
+					
+					&:hover {
+						color: map-get($wp-widgets-map-merged, 'link-hover-color');
+					}
+				}
+			}
+			
+			.qodef-woo-ratings {
+				margin-top: 6px;
+			}
+		}
+		
+		//&.widget_recent_reviews {
+		//
+		//	ul {
+		//
+		//		li {
+		//			min-height: 80px;
+		//			margin-bottom: 20px;
+		//
+		//			&:last-child {
+		//				margin-bottom: 0;
+		//			}
+		//
+		//			> * {
+		//				display: block;
+		//				padding-left: 100px;
+		//			}
+		//		}
+		//	}
+		//
+		//	a {
+		//		position: relative;
+		//		@include qodefWooLabelsHeadingStyle();
+		//
+		//		&:hover {
+		//			color: map-get($wp-widgets-map-merged, 'link-hover-color');
+		//		}
+		//
+		//		img {
+		//			position: absolute;
+		//			top: 0;
+		//			left: 0;
+		//			width: 64px;
+		//			min-height: 112px;
+		//			object-fit: cover;
+		//		}
+		//	}
+		//
+		//	.qodef-woo-ratings {
+		//		margin-top: 5px;
+		//	}
+		//}
+	}
+}

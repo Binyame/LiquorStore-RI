@@ -1,0 +1,295 @@
+/* ==========================================================================
+# Side Area style - begin
+========================================================================== */
+%sidearea-lines {
+	.qodef-lines {
+		position: relative;
+		display: block;
+		width: 14px;
+		height: 18px;
+
+		.qodef-line {
+			position: absolute;
+			width: 1px;
+			height: 100%;
+			background-color: currentColor;
+			transition: top .3s ease, transform .3s ease;
+
+			&.qodef-line-1 {
+				left: 0;
+			}
+
+			&.qodef-line-2 {
+				left: 50%;
+			}
+
+			&.qodef-line-3 {
+				left: 100%;
+			}
+		}
+	}
+}
+
+.qodef-side-area-opener {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 1;
+	
+	.qodef-side-area-opener-icon {
+		display: block;
+	}
+
+	&:hover {
+		color: $main-color;
+	}
+
+	&.qodef-side-area-opener--icon-pack {
+
+		.qodef-side-area-opener-icon {
+			font-size: 35px;
+
+			* {
+				display: block;
+				line-height: inherit;
+
+				&:before {
+					display: block;
+					line-height: inherit;
+				}
+			}
+		}
+	}
+
+	&.qodef-side-menu-opener--svg-path {
+
+		.qodef-side-area-opener-icon {
+
+			> * {
+				vertical-align: middle;
+			}
+
+			> *,
+			path {
+				fill: currentColor;
+				stroke: currentColor;
+			}
+		}
+	}
+
+	&.qodef-side-area-opener--predefined {
+		line-height: 1;
+		width: 56px;
+		height: 58px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		@extend %sidearea-lines;
+	}
+
+	.qodef-header--light & {
+		&.qodef-side-area-opener--predefined .qodef-line {
+			background-color: #fff;
+		}
+
+		&.qodef-side-area-opener--icon-pack .qodef-side-area-opener-icon {
+			color: #fff;
+		}
+
+		&.qodef-side-menu-opener--svg-path .qodef-side-menu-icon {
+			> *,
+			path {
+				fill: #fff;
+				stroke: #fff;
+			}
+		}
+	}
+
+	.qodef-header--dark & {
+		&.qodef-side-area-opener--predefined .qodef-line {
+			background-color: #000;
+		}
+
+		&.qodef-side-area-opener--icon-pack .qodef-side-area-opener-icon {
+			color: #000;
+		}
+
+		&.qodef-side-menu-opener--svg-path .qodef-side-menu-icon {
+			> *,
+			path {
+				fill: #000;
+				stroke: #000;
+			}
+		}
+	}
+}
+
+#qodef-side-area {
+	position: fixed;
+	top: 0;
+	right: -34%;
+	width: 34%;
+	height: 100%;
+	min-height: 100%;
+	padding: 115px 4% 2%;
+	background-color: $box-background-color;
+	background-position: center 15%;
+	overflow: hidden;
+	visibility: hidden;
+	z-index: 9999;
+	transition: all .6s cubic-bezier(.77, 0, .175, 1);
+	text-align: center;
+	
+	@media screen and (max-width: 1439px) {
+		min-width: 37%;
+	}
+
+	#qodef-side-area-close {
+		position: absolute;
+		top: 48px;
+		right: 45px;
+		display: block;
+		z-index: 1000;
+		color: #fff;
+
+		&.qodef-side-area-close--icon-pack {
+			font-size: 35px;
+
+			* {
+				display: block;
+				line-height: inherit;
+
+				&:before {
+					display: block;
+					line-height: inherit;
+				}
+			}
+		}
+
+		&.qodef-side-area-close--svg-path {
+
+			> * {
+				vertical-align: middle;
+			}
+
+			> *,
+			path {
+				fill: currentColor;
+				stroke: currentColor;
+			}
+		}
+
+		&.qodef-side-area-close--predefined {
+			line-height: 1;
+
+			@extend %sidearea-lines;
+
+			&:hover {
+
+				.qodef-lines {
+
+					.qodef-line {
+					
+						&.qodef-line-1 {
+							animation: 1s qodef-animate-close-svg-line forwards;
+						}
+			
+						&.qodef-line-3 {
+							animation: 1s .3s qodef-animate-close-svg-line forwards;
+						}
+					}
+				}
+			}
+
+			.qodef-lines {
+				width: 20px;
+				height: 20px;
+				
+				.qodef-line {
+					backface-visibility: hidden;
+					transition: .3s;
+
+					&.qodef-line-1 {
+						top: 0;
+						transform: rotate(45deg);
+						left: calc(50% - 1px);
+						background-color: #393632;
+					}
+
+					&.qodef-line-2 {
+						display: none;
+					}
+
+					&.qodef-line-3 {
+						top: 0;
+						transform: rotate(-45deg);
+						left: 50%;
+						background-color: #393632;
+					}
+				}
+
+			}
+		}
+	}
+	
+	.qodef-side-area--opened & {
+		right: 0;
+		visibility: visible;
+	}
+
+	.widget {
+		&.widget_aperitif_core_icon_list_item {
+			display: inline-block;
+		}
+		
+		.textwidget {
+			display: flex;
+			flex-direction: column;
+		}
+
+		ul {
+			display: block;
+			text-align: center;
+
+			li {
+				display: inline-block;
+				font-size: 14px;
+				font-style: normal !important;
+				font-family: $text-font;
+
+				padding: 2px 12px;
+				border-right: 1px solid #dadada;
+
+				&:last-child {
+					border-right: 1px solid transparent;
+				}
+
+			}
+		}
+
+	}
+}
+
+.qodef-side-area-cover {
+	height: 100%;
+	left: 0;
+	opacity: 0;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	background-color: rgba(43,40,36,.3);
+	transition: .3s;
+	width: 100%;
+	z-index: 1002;
+	pointer-events: none;
+
+	.qodef-side-area--opened & {
+		opacity: 1;
+		pointer-events: all;
+	}
+}
+
+/* ==========================================================================
+# Side Area style - end
+========================================================================== */

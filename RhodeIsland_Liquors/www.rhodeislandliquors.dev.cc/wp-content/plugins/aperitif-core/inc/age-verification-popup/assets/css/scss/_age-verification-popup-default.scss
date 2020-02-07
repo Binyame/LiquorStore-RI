@@ -1,0 +1,132 @@
+/* ==========================================================================
+# Subscribe Popup default style
+========================================================================== */
+
+.qodef-avp-holder {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 115;
+    visibility: hidden;
+    transition: $opacity-transition;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1b150e;
+    
+    .qodef-avp-logo {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        
+        a {
+            display: block;
+        }
+    
+        img {
+    
+            &.qodef--main {
+                opacity: 0;
+            }
+    
+            &.qodef--dark{
+                opacity: 0;
+            }
+            
+            &.qodef--light {
+                opacity: 1;
+            }
+    
+            &:not(.qodef--main) {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+    
+    .qodef-avp-inner {
+        padding: 30px;
+    }
+    
+    .qodef-avp-content-container {
+        text-align: center;
+        max-width: 700px;
+    }
+
+    .qodef-avp-title {
+        margin: 18px 0 11px 0;
+        color: #fff;
+        
+        @include qodefScreenSize680 {
+            font-size: 45px;
+            margin: 77px 0 11px;
+        }
+    }
+
+    .qodef-avp-subtitle {
+        margin: 0 0 32px;
+        font-family: $text-font;
+        font-size: 21px;
+        color: $main-color-light;
+        font-style: italic;
+    
+        @include qodefScreenSize680 {
+            margin: 15px 0 46px;
+        }
+    }
+    
+    .qodef-avp-note {
+        font-size: 17px;
+        line-height: 25px;
+        color: #e5dcdb;
+        margin-bottom: 52px;
+    
+        @include qodefScreenSize680 {
+            display: none;
+        }
+    }
+
+    .qodef-avp-prevent {
+        @include qodefRelativeLayout();
+    
+        .qodef-avp-prevent-yes {
+            margin: 0 10px 0 0;
+            
+            @include qodefScreenSize680 {
+                margin: 0 0 31px 0;
+            }
+        }
+        
+        .qodef-avp-prevent-no {
+            color: #fff;
+            border-color: #a3a19e;
+            
+            &:hover {
+                color: #fff;
+                border-color: #28201e;
+                background-color: #28201e;
+            }
+        }
+    }
+}
+
+/* Popup open/close style */
+
+.qodef-avp-opened {
+    .qodef-avp-holder {
+        opacity: 1;
+        visibility: visible;
+        transition: $opacity-transition;
+
+        .qodef-avp-inner {
+            opacity: 1;
+            transform: scale(1);
+            transition: transform .8s cubic-bezier(0.26, 0.63, 0, 0.96);
+        }
+    }
+}

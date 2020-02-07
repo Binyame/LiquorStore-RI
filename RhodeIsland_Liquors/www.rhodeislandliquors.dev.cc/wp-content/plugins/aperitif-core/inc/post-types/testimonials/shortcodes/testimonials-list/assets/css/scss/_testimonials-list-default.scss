@@ -1,0 +1,123 @@
+/* Testimonials list shortcode style - start */
+
+.qodef-testimonials-list ~ .swiper-button-outside {
+	transform: translateX(0) !important;
+	top: 49%;
+}
+
+.qodef-testimonials-list {
+	max-width: 980px;
+	
+	@media screen and (max-width: 1280px) {
+		max-width: 800px;
+	}
+	
+	.qodef-e-inner {
+		padding: 105px 0 130px;
+		text-align: center;
+	}
+	
+	.swiper-button-next {
+		color: $heading-color;
+	}
+	
+	.swiper-button-prev {
+		color: $heading-color;
+	}
+	
+	.qodef-e-media-image {
+		line-height: 0;
+		margin-bottom: 31px;
+		display: inline-block;
+		position: relative;
+		
+		img {
+			width: auto;
+			border-radius: 60% 40% 60% 40% / 60% 40% 60% 40%;
+		}
+		
+		.qodef-e-media-quote {
+			font-size: 70px;
+			color: $main-color;
+			position: absolute;
+			left: -15px;
+			top: 31px;
+			display: block;
+		}
+	}
+	
+	.qodef-e-content {
+		//max-width: 980px;
+		margin: 0 auto;
+	}
+	
+	.qodef-e-title {
+		margin: 0 0 26px;
+	}
+	
+	.qodef-e-text {
+		margin: 0 0 26px;
+		font-size: 21px;
+		font-style: italic;
+		line-height: 32px;
+	}
+	
+	.qodef-e-author {
+		margin: 0;
+		
+		.qodef-e-author-name,
+		.qodef-e-author-job {
+			display: block;
+		}
+		
+		.qodef-e-author-job {
+			font-size: 15px;
+			font-family: $text-font;
+			color: $main-color;
+			font-style: italic;
+			letter-spacing: 0;
+		}
+	}
+	
+	&.qodef-skin--light {
+		
+		.qodef-e-title, .qodef-e-author-name {
+			color: #fff;
+		}
+		
+		.qodef-e-text {
+			color: #e5dcdb;
+		}
+		
+		.qodef-e-author {
+			
+			.qodef-e-author-job {
+				color: $main-color-light;
+			}
+		}
+		
+		.swiper-button-next {
+			color: #fff;
+		}
+		
+		.swiper-button-prev {
+			color: #fff;
+		}
+		
+		.swiper-pagination-bullet {
+			
+			&:before {
+				color: #fff;
+			}
+		}
+	}
+	
+	&.qodef-skin--light ~ .swiper-button-outside {
+		
+		&:before {
+			color: #fff;
+		}
+	}
+}
+
+/* Testimonials list shortcode style - end */

@@ -1,0 +1,47 @@
+/* ==========================================================================
+   Restaurant Menu shortcode styles
+   ========================================================================== */
+
+.qodef-restaurant-menu-list {
+	
+	.qodef-e-heading {
+		display: flex;
+		align-items: baseline;
+	}
+	
+	.qodef-e-heading-title {
+		margin: 0;
+	}
+	
+	.qodef-e-heading-line {
+		flex-grow: 1;
+		border-bottom: 1px solid #bfb8b6;
+		opacity: 0.5;
+		margin: 0 10px;
+	}
+	
+	.qodef-e-heading-price {
+		margin: 0;
+		font-family: $text-font;
+		font-style: italic;
+	}
+	
+	.qodef-e-description {
+		margin: 2px 0 0;
+		color: $main-color;
+		font-size: 15px;
+		font-style: italic;
+	}
+	
+	&.qodef-item-skin--light {
+		
+		.qodef-e-heading-title,
+		.qodef-e-heading-price {
+			color: #fff;
+		}
+		
+		.qodef-e-description {
+			color: $main-color-light;
+		}
+	}
+}

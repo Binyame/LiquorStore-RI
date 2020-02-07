@@ -1,0 +1,88 @@
+/* ==========================================================================
+   WooCommerce checkout styles
+   ========================================================================== */
+
+#qodef-woo-page {
+
+	&.qodef--checkout {
+		
+		.product-quantity {
+			font-weight: 400;
+		}
+		
+		@media screen and (max-width: 680px) {
+			.woocommerce-additional-fields__field-wrapper {
+				
+				textarea {
+					line-height: 20px;
+				}
+			}
+		}
+		
+		.woocommerce-form-coupon-toggle {
+			
+			.woocommerce-info {
+				flex-direction: column;
+				
+				a {
+					margin-top: 0 !important;
+				}
+			}
+		}
+		
+		.woocommerce-form-coupon {
+			
+			> p {
+				margin-bottom: 10px;
+			}
+		}
+		
+		.woocommerce-checkout {
+			margin-top: 40px;
+		}
+		
+		#customer_details {
+			
+			h3 {
+				@include qodefWooTemplatesHeadingStyle(13px 0 20px, true);
+			}
+		}
+		
+		#order_review_heading {
+			@include qodefWooTemplatesHeadingStyle(18px 0 20px, true);
+		}
+		
+		.woocommerce-checkout-payment {
+			margin-top: 30px;
+			
+			.place-order {
+				margin-top: 30px;
+			}
+			
+			.woocommerce-terms-and-conditions-wrapper {
+				margin-bottom: 41px;
+			}
+		}
+		
+		.wc_payment_methods {
+			@include qodefWooTemplatesListStyles();
+			
+			li {
+				padding-left: 25px;
+				padding-right: 25px;
+			}
+			
+			.input-radio {
+				position: absolute;
+				top: 18px;
+				left: 0;
+				margin: 0;
+			}
+			
+			label {
+				@include qodefWooLabelsHeadingStyle();
+				cursor: pointer;
+			}
+		}
+	}
+}

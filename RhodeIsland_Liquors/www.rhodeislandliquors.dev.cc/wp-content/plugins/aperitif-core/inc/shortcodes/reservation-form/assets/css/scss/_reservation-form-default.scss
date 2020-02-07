@@ -1,0 +1,160 @@
+/* ==========================================================================
+   Reservation Form styles - start
+   ========================================================================== */
+
+.qodef-reservation-form {
+	
+	.qodef-m-inner {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+	
+	.qodef-holder--field {
+		flex-basis: 19%;
+		position: relative;
+	}
+	
+	.qodef-holder--label {
+		flex-shrink: 0;
+		flex-basis: auto;
+	}
+	
+	.qodef-e-icon-arrow {
+		position: absolute;
+		right: 15px;
+		top: 50%;
+		transform: translateY(-50%);
+		display: flex;
+		font-size: 23px;
+		color: $text-color;
+		z-index: -1;
+	}
+	
+	.qodef-e-icon-user,
+	.qodef-e-icon-date,
+	.qodef-e-icon-time {
+		color: $main-color-light;
+		position: absolute;
+		left: 15px;
+		display: flex;
+		font-size: 14px;
+		top: 21px;
+	}
+	
+	.qodef-e-icon-date {
+		font-size: 17px;
+		top: 18px;
+	}
+	
+	.qodef-e-label {
+		text-align: center;
+		font-size: 38px;
+		line-height: 46px;
+		color: rgba(255, 255, 255, 0.5);
+		font-family: 'Dawning of a New Day', cursive;
+	}
+	
+	.select2-container--default,
+	.qodef-e-date,
+	.qodef-e-date:focus {
+		margin: 0;
+		width: 100% !important;
+		text-align: center;
+		color: #e5dcdb;
+		font-size: 17px;
+		border: 1px solid rgba(191, 184, 182, .5);
+	}
+	
+	.select2-selection--single {
+		color: inherit !important;
+		font-size: inherit !important;
+		border: inherit !important;
+	}
+	
+	.select2-container--open {
+		color: #e5dcdb;
+	}
+	
+	button {
+		width: 100%;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+	
+	.qodef-m-copyright {
+		font-size: 14px;
+		font-family: $text-font;
+		color: #797574;
+		margin: 5px 0;
+	}
+}
+
+/* ==========================================================================
+  Reservation Form styles - end
+   ========================================================================== */
+
+/* ==========================================================================
+   #jQuery Datepicker styles - start
+   ========================================================================== */
+#ui-datepicker-div {
+	z-index: 1000 !important;
+	background-color: #fff;
+	min-width: 266px;
+	font-size: 12px;
+	
+	table tr {
+		border: none;
+	}
+	
+	table {
+		padding: 0 4px 4px;
+	}
+	
+	table td {
+		padding: 3px;
+		line-height: 1.5em;
+	}
+	
+	.ui-datepicker-header {
+		padding: 5px 16px;
+		position: relative;
+	}
+	
+	.ui-datepicker-next,
+	.ui-datepicker-prev {
+		position: absolute;
+		font-size: 14px;
+	}
+	
+	.ui-datepicker-prev {
+		left: 12px;
+	}
+	
+	.ui-datepicker-next {
+		right: 12px;
+	}
+	
+	.ui-datepicker-title {
+		text-align: center;
+	}
+	
+	.ui-datepicker-today {
+		color: #fff;
+		background-color: $main-color;
+		
+		a {
+			color: #fff !important;
+		}
+	}
+	
+	.ui-datepicker-current-day {
+		a {
+			color: $main-color;
+		}
+	}
+}
+
+/* ==========================================================================
+   #jQuery Datepicker styles - end
+   ========================================================================== */

@@ -1,0 +1,255 @@
+# Copyright (C) 2019 Qode Themes
+# This file is distributed under the same license as the Qode Framework plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Qode Framework 1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/qode-framework\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2019-11-18T11:41:39+01:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.1.0\n"
+"X-Domain: qode-framework\n"
+
+#. Plugin Name of the plugin
+msgid "Qode Framework"
+msgstr ""
+
+#. Description of the plugin
+msgid "Framework plugin developed as a base for Qode themes"
+msgstr ""
+
+#. Author of the plugin
+msgid "Qode Themes"
+msgstr ""
+
+#: helpers/helper.php:825
+#: helpers/helper.php:854
+#: inc/fonts/helper.php:96
+#: inc/sidebar/custom-sidebar.php:164
+msgid "Default"
+msgstr ""
+
+#: inc/common/core/repeater-inner.php:23
+msgid "Add New Item"
+msgstr ""
+
+#: inc/common/core/repeater.php:23
+msgid "+ Add New Item"
+msgstr ""
+
+#: inc/common/fields/field-file.php:11
+#: inc/common/fields-wp/field-file.php:14
+msgid "File Thumbnail"
+msgstr ""
+
+#: inc/common/fields/field-file.php:18
+#: inc/common/fields-wp/field-file.php:21
+msgid "Select File"
+msgstr ""
+
+#: inc/common/fields/field-file.php:18
+#: inc/common/fields/field-image.php:32
+#: inc/common/fields-wp/field-file.php:21
+#: inc/common/fields-wp/field-image.php:31
+#: inc/widgets/fields/field-image.php:17
+msgid "Upload"
+msgstr ""
+
+#: inc/common/fields/field-file.php:19
+#: inc/common/fields/field-image.php:33
+#: inc/common/fields-wp/field-file.php:22
+#: inc/common/fields-wp/field-image.php:32
+#: inc/widgets/fields/field-image.php:18
+msgid "Remove"
+msgstr ""
+
+#: inc/common/fields/field-iconpack.php:19
+#: inc/common/fields-nav-menu/field-iconpack.php:18
+#: inc/icons/icons.php:35
+msgid "Select Icon Pack"
+msgstr ""
+
+#: inc/common/fields/field-image.php:15
+#: inc/common/fields/field-image.php:25
+#: inc/common/fields-wp/field-image.php:16
+#: inc/common/fields-wp/field-image.php:24
+#: inc/widgets/fields/field-image.php:11
+msgid "Image Thumbnail"
+msgstr ""
+
+#: inc/common/fields/field-image.php:32
+#: inc/common/fields-wp/field-image.php:31
+#: inc/widgets/fields/field-image.php:17
+msgid "Select Image"
+msgstr ""
+
+#: inc/common/fields/field-yesno.php:7
+#: inc/common/fields-wp/field-yesno.php:9
+msgid "Yes"
+msgstr ""
+
+#: inc/common/fields/field-yesno.php:9
+#: inc/common/fields-wp/field-yesno.php:13
+msgid "No"
+msgstr ""
+
+#: inc/common/modules/admin/core/options.php:15
+msgid "Qode Options"
+msgstr ""
+
+#: inc/common/modules/admin/core/options.php:147
+msgid "Saved"
+msgstr ""
+
+#: inc/common/modules/admin/core/options.php:152
+#: inc/common/modules/admin/core/options.php:179
+msgid "Wrong options trigger"
+msgstr ""
+
+#: inc/common/modules/admin/core/options.php:174
+msgid "Options reset to default"
+msgstr ""
+
+#: inc/common/modules/admin/templates/holder.php:7
+msgid "Admin Qode Interactive image"
+msgstr ""
+
+#: inc/common/modules/admin/templates/holder.php:11
+msgid "Help Center Icon image"
+msgstr ""
+
+#: inc/common/modules/admin/templates/holder.php:12
+msgid "Support Center"
+msgstr ""
+
+#: inc/common/modules/admin/templates/holder.php:16
+msgid "Search Options"
+msgstr ""
+
+#: inc/common/modules/admin/templates/holder.php:23
+msgid "Successfully saved!"
+msgstr ""
+
+#: inc/common/modules/admin/templates/holder.php:26
+msgid "Save Changes"
+msgstr ""
+
+#: inc/common/modules/admin/templates/holder.php:29
+msgid "Are you sure? You will reset all options to default values. This will also apply on already imported demo."
+msgstr ""
+
+#: inc/common/modules/admin/templates/holder.php:29
+msgid "Reset All"
+msgstr ""
+
+#: inc/common/modules/nav-menu/core/page.php:36
+msgid "Icon"
+msgstr ""
+
+#: inc/media/image-sizes.php:64
+msgid "Large size"
+msgstr ""
+
+#: inc/media/image-sizes.php:65
+msgid "Max Width"
+msgstr ""
+
+#: inc/media/image-sizes.php:68
+msgid "Max Height"
+msgstr ""
+
+#: inc/media/image-sizes.php:72
+msgid "Crop to exact dimensions (normally are proportional) "
+msgstr ""
+
+#: inc/post-types/custom-post-type-taxonomy.php:65
+#: inc/post-types/custom-post-type-taxonomy.php:75
+msgid "%s %s"
+msgstr ""
+
+#: inc/post-types/custom-post-type-taxonomy.php:66
+msgid "Search %s %s"
+msgstr ""
+
+#: inc/post-types/custom-post-type-taxonomy.php:67
+msgid "All %s %s"
+msgstr ""
+
+#: inc/post-types/custom-post-type-taxonomy.php:68
+msgid "Parent %s %s"
+msgstr ""
+
+#: inc/post-types/custom-post-type-taxonomy.php:69
+msgid "Parent %s %s:"
+msgstr ""
+
+#: inc/post-types/custom-post-type-taxonomy.php:70
+msgid "Edit %s %s"
+msgstr ""
+
+#: inc/post-types/custom-post-type-taxonomy.php:71
+msgid "Update %s %s"
+msgstr ""
+
+#: inc/post-types/custom-post-type-taxonomy.php:72
+msgid "Add New %s %s"
+msgstr ""
+
+#: inc/post-types/custom-post-type-taxonomy.php:73
+msgid "New %s %s Name"
+msgstr ""
+
+#: inc/post-types/custom-post-type-taxonomy.php:74
+msgid "No %s %s Found"
+msgstr ""
+
+#: inc/post-types/custom-post-type-taxonomy.php:90
+#: inc/post-types/custom-post-type.php:199
+msgid "base"
+msgstr ""
+
+#: inc/sidebar/custom-sidebar.php:12
+msgid "Custom Sidebar"
+msgstr ""
+
+#: inc/sidebar/custom-sidebar.php:40
+msgid "This area allows you to add Custom widget area on your site"
+msgstr ""
+
+#: inc/sidebar/custom-sidebar.php:42
+msgid "Custom Sidebar Name"
+msgstr ""
+
+#: inc/sidebar/custom-sidebar.php:43
+msgid "Add Sidebar"
+msgstr ""
+
+#: inc/sidebar/custom-sidebar.php:89
+msgid "Custom sidebar is added"
+msgstr ""
+
+#: inc/sidebar/custom-sidebar.php:91
+#: inc/sidebar/custom-sidebar.php:118
+msgid "Nonce is invalid"
+msgstr ""
+
+#: inc/sidebar/custom-sidebar.php:94
+#: inc/sidebar/custom-sidebar.php:121
+msgid "POST is invalid"
+msgstr ""
+
+#: inc/sidebar/custom-sidebar.php:113
+msgid "Custom sidebar is deleted"
+msgstr ""
+
+#: inc/sidebar/custom-sidebar.php:115
+msgid "Custom sidebar name is invalid"
+msgstr ""
+
+#: inc/widgets/qode-widget.php:233
+msgid "There are no options for this widget."
+msgstr ""

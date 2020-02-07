@@ -1,0 +1,83 @@
+/* ==========================================================================
+   Progress Bar shortcode styles
+   ========================================================================== */
+
+.qodef-progress-bar {
+	.qodef-m-canvas {
+        margin-bottom: 42px;
+        min-height: 10px;
+    }
+	
+	.qodef-m-inner {
+		margin-bottom: 43px;
+	}
+	
+	&:not(.qodef-layout--line) {
+		.qodef-m-inner {
+			display: flex;
+			flex-direction: column;
+		}
+		
+		.qodef-m-canvas {
+			@include qodefRelativeLayout();
+			
+			svg {
+				display: block;
+			}
+		}
+		
+		.progressbar-text {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 0;
+			margin: 0;
+			@include qodefHeadingStyle('h5');
+		}
+	}
+	
+	.qodef-m-title {
+		margin: 20px 0 0;
+	}
+	
+	&.qodef-layout--semi-circle {
+		
+		.progressbar-text {
+			padding-top: 20px;
+			transform: none !important;
+		}
+	}
+	
+	&.qodef-layout--line {
+		
+		.progressbar {
+			position: relative;
+			background-color: #eae9e8;
+		}
+		
+		.proggress {
+			width: 0;
+			position: relative;
+			background: $main-color;
+		}
+		
+		.percentCount {
+			position: absolute;
+			top: -34px;
+			height: auto;
+			transform: translateX(-50%);
+			font-style: italic;
+			right: -15px !important;
+			left: auto !important;
+		}
+		
+		.qodef-m-title {
+			margin: 0 0 11px;
+		}
+	}
+}

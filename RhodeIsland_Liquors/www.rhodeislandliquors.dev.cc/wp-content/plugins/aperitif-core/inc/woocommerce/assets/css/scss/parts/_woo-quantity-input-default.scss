@@ -1,0 +1,73 @@
+/* ==========================================================================
+   WooCommerce quantity input styles
+   ========================================================================== */
+
+#qodef-woo-page {
+	
+	.qodef-quantity-buttons {
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		
+		.qodef-quantity-input,
+		.qodef-quantity-minus,
+		.qodef-quantity-plus {
+			display: inline-block;
+			vertical-align: middle;
+			text-align: center;
+			user-select: none;
+			box-sizing: border-box;
+		}
+		
+		.qodef-quantity-input {
+			position: relative;
+			height: 55px;
+			line-height: 55px;
+			min-width: 86px;
+			padding: 3% 0 0;
+			margin: 0;
+			outline: 0;
+			border: 1px solid #dfdede;
+			font-size: 17px;
+			color: $text-color;
+			z-index: 3;
+			
+			.qodef-browser--ms-explorer & {
+				padding: 0;
+			}
+		}
+		
+		.qodef-quantity-minus,
+		.qodef-quantity-plus {
+			position: absolute;
+			top: 50%;
+			right: 0;
+			width: 25px;
+			height: 25px;
+			line-height: 23px;
+			cursor: pointer;
+			transition: color .15s ease-in-out;
+			z-index: 5;
+			font-size: 23px;
+
+			&:before {
+				display: block;
+				line-height: 25px;
+			}
+
+			&:hover {
+				color: $main-color;
+			}
+		}
+		
+		.qodef-quantity-plus {
+			text-align: left;
+			transform: translate(-10px, -50%);
+		}
+		
+		.qodef-quantity-minus {
+			text-align: right;
+			transform: translate(-50px, -50%);
+		}
+	}
+}

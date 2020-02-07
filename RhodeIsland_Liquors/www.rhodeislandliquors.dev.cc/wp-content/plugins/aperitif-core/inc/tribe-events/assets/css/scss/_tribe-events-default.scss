@@ -1,0 +1,64 @@
+/* ==========================================================================
+   Tribe Events styles - start
+   ========================================================================== */
+
+#tribe-events {
+	
+	.tribe-events-content {
+		
+		p {
+			@include qodefParagraphStyle();
+		}
+	}
+	
+	#tribe-events-content.tribe-events-list,
+	#tribe-events-content.tribe-events-month {
+		margin-bottom: 147px;
+		
+		.tribe-events-notices {
+			text-shadow: none;
+		}
+	}
+	
+	.tribe-events-page-title {
+		@include qodefHeadingStyle();
+		@include qodefH3Style();
+		
+		text-align: left;
+		margin: 0 0 72px;
+	}
+	
+	#tribe-bar-collapse-toggle {
+		display: none !important;
+	}
+	
+	#tribe-bar-filters {
+		display: block !important;
+		float: left !important;
+		margin: 0 !important;
+		position: relative !important;
+		width: 100% !important;
+		background: none !important;
+		box-shadow: none !important;
+		padding: 0 !important;
+	}
+}
+
+.post-type-archive-tribe_events {
+	
+	.datepicker {
+		
+		.active {
+			color: #fff !important;
+			background-color: $main-color !important;
+			
+			&:hover {
+				background-color: $main-color-hover !important;
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Tribe Events styles - end
+   ========================================================================== */

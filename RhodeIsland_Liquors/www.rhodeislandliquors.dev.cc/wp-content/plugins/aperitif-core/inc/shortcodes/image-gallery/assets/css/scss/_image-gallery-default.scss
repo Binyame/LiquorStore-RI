@@ -1,0 +1,17 @@
+/* ==========================================================================
+Image galerry shortcode styles start
+========================================================================== */
+
+.qodef-image-gallery {
+	
+	.qodef-image-wrapper {
+		
+		a {
+			@include qodefImageOverlayHoverStyle();
+			position: relative;
+			height: 100%;
+			width: 100%;
+			display: block;
+		}
+	}
+}

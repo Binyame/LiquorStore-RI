@@ -1,0 +1,194 @@
+/* ==========================================================================
+   Header Vertical navigation style - begin
+   ========================================================================== */
+
+.qodef-header--vertical {
+
+	.qodef-header-vertical-navigation {
+		margin: 0 auto;
+		padding: 0;
+		z-index: 100;
+		width: 100%;
+
+		ul {
+			position: relative;
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+			text-align: center;
+
+			li {
+				position: relative;
+				padding: 0;
+				margin: 0;
+
+				a {
+					position: relative;
+					display: inline-block;
+					margin: 0;
+					padding: 3px 0;
+					color: #e5dcdb;
+					font-family: $text-font;
+					font-size: 15px;
+					font-weight: 400;
+					vertical-align: middle;
+
+					.qodef-menu-item-inner {
+						padding: 0 5px;
+						margin: 0;
+					}
+					
+					&:before, &:after {
+						display: none;
+					}
+					
+					&:hover {
+						color: #c8693a;
+
+						.qodef-menu-arrow {
+							transform: rotate(0deg);
+						}
+					}
+
+					.qodef-menu-item-icon {
+						margin-right: 5px;
+						vertical-align: middle;
+					}
+				}
+				
+				.qodef-menu-arrow {
+
+				}
+
+				&.current_page_item > a,
+				&.current-menu-item > a,
+				&.current-menu-ancestor > a {
+					color: $main-color;
+				}
+
+				ul {
+					padding: 10px 0;
+				}
+
+				.qodef-drop-down-second {
+					transform: translateZ(0);
+
+					.qodef-drop-down-second-inner {
+						position: relative;
+						display: block;
+						padding: 0;
+						z-index: 997;
+					}
+				}
+			}
+		}
+
+		> ul {
+
+			> li {
+
+				> a {
+					@include qodefButtonLinePseudos(5px, -1px);
+					font-family: $heading-font;
+					color: #000;
+					font-size: 15px;
+					line-height: 30px;
+					font-weight: 400;
+					display: inline-block;
+					letter-spacing: 0.08em;
+					padding: 10px 0;
+				}
+				
+				&.current_page_item > a,
+				&.current-menu-item > a,
+				&.current-menu-ancestor > a {
+					@include qodefButtonLinePseudosActive();
+				}
+			}
+		}
+
+		&.qodef-vertical-drop-down--below {
+
+			ul li {
+
+				.qodef-drop-down-second {
+					display: none;
+				}
+
+			}
+
+		}
+
+		&.qodef-vertical-drop-down--side {
+
+			.qodef-drop-down-second {
+				position: absolute;
+				top: 0;
+				width: 100%;
+
+				ul {
+					position: absolute;
+					top: -23px;
+					left: calc(100% + 40px); //because of the padding right
+					width: 254px;
+					background-color: #fff;
+					padding: 25px 20px;
+					margin-left: 50px;
+					visibility: hidden;
+					opacity: 0;
+					transition: all .2s ease;
+
+					* {
+						visibility: inherit;
+						transition: visibility .2s ease;
+					}
+
+					&.qodef-float--open {
+						margin-left: 0;
+						opacity: 1;
+						visibility: visible;
+						z-index: 900;
+					}
+
+					ul {
+						top: -25px; //because of the padding top
+						left: calc(100% + 20px); //because of the padding right
+						visibility: hidden;
+						transition: all .2s ease;
+					}
+				}
+			}
+		}
+	}
+
+	&.qodef-header--light {
+		ul {
+			li {
+				a {
+					color: #e5dcdb;
+
+
+				}
+			}
+		}
+
+		.qodef-header-vertical-navigation {
+			> ul {
+				> li {
+					> a {
+						color: #fff;
+
+						&:hover {
+							color: #fff !important;
+						}
+					}
+				}
+			}
+		}
+
+	}
+}
+
+/* ==========================================================================
+   Header Vertical navigation style - end
+   ========================================================================== */

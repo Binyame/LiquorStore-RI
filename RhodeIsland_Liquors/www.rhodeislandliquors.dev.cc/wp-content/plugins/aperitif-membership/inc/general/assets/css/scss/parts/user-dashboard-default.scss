@@ -1,0 +1,66 @@
+/* ==========================================================================
+   User Dashboard global styles
+   ========================================================================== */
+
+#qodef-membership-user-dashboard {
+	position: relative;
+	display: flex;
+	align-items: flex-start;
+	width: 100%;
+	
+	.qodef-m-navigation {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		width: 30%;
+		flex-shrink: 0;
+	}
+	
+	.qodef-m-navigation-items {
+		list-style: none;
+		margin: 0;
+	}
+	
+	.qodef-m-navigation-item {
+		position: relative;
+		display: block;
+		margin: 10px 0;
+		
+		.qodef-e-link {
+			position: relative;
+			display: flex;
+			align-items: center;
+			@include qodefHeadingStyle('h5');
+		}
+		
+		.qodef-e-icon {
+			flex-shrink: 0;
+			margin-right: 10px;
+		}
+	}
+	
+	.qodef-m-content {
+		@include qodefRelativeLayout();
+		
+		.qodef-m-image {
+			margin-bottom: 20px;
+			
+			img {
+				display: block;
+			}
+		}
+		
+		.qodef-m-text {
+			position: relative;
+			display: flex;
+			align-items: flex-start;
+			margin: 15px 0 0;
+		}
+		
+		.qodef-m-text-label {
+			flex-shrink: 0;
+			margin-right: 10px;
+			@include qodefHeadingStyle('h5');
+		}
+	}
+}

@@ -1,0 +1,1041 @@
+
+.qodef-smooth-transition-loader {
+	position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+	z-index: 2000;
+
+	
+	&.qodef-aperitif-loader--ready {
+
+		.qodef-aperitif-spinner-bg-holder {
+			opacity: 1 !important;
+			transition: 1s;
+		}
+	}
+	
+	.qodef-st-loader {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	
+		.qodef-st-loader-inner {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			height: 100%;
+			color: $main-color;
+			background-color: #fff;
+		}
+
+		/* aperitif spinner - start */
+
+		.qodef-aperitif-spinner-bg-holder {
+			opacity: 0;
+			@include qodefAbsoluteLayout();
+			background-image: url('../img/loader-bg.jpg');
+		}
+		
+		.qodef-aperitif-spinner-holder {
+			position: relative;
+			text-align: center;
+			overflow: visible;
+
+			.qodef-aperitif-spinner-text {
+				display: block;
+				margin-bottom: 40px;
+				font-family: $heading-font;
+				font-size: 30px;
+				letter-spacing: 3px;
+				color: $heading-color;
+				opacity: 0;
+				animation: qodef-fade-in-numbers 1s forwards;
+			}
+
+			.qodef-aperitif-spinner-line {
+				position: relative;
+				display: block;
+				margin-bottom: 50px;
+				height: 3px;
+				width: 555px;
+				background-color: #e5e1dc;
+				overflow: hidden;
+				opacity: 0;
+				animation: qodef-fade-in-numbers 1s .3s forwards;
+
+				@include qodefScreenSize680() {
+					width: 300px;
+				}
+
+				.qodef-aperitif-spinner-line-front {
+					@include qodefAbsoluteLayout();
+					background-color: $main-color;
+					width: 0;
+				}
+			}
+			
+			.qodef-aperitif-spinner-number-holder {
+				position: relative;
+				z-index: 23;
+				font-size: 23px;
+				font-family: $text-font;
+				font-style: italic;
+				color: $heading-color;
+				opacity: 0;
+				animation: qodef-fade-in-numbers 1s .5s forwards;
+			}
+
+			@keyframes qodef-fade-in-numbers {
+				0% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+		}
+
+		/* aperitif spinner - end */
+		
+		/* rotate circles - start */
+		
+		@include keyframes(ball-fall) {
+			0% {
+				opacity: 0;
+				transform: translateY(-145%);
+			}
+			10% {
+				opacity: .5;
+			}
+			20% {
+				opacity: 1;
+				transform: translateY(0);
+			}
+			80% {
+				opacity: 1;
+				transform: translateY(0);
+			}
+			90% {
+				opacity: .5
+			}
+			100% {
+				opacity: 0;
+				transform: translateY(145%);
+			}
+		}
+		
+		.qodef-rotate-circles {
+			width: 60px;
+			height: 20px;
+			> div {
+				background-color: currentColor;
+				display: inline-block;
+				width: 12px;
+				height: 12px;
+				margin: 4px;
+				border-radius: 100%;
+				opacity: 0;
+				animation: ball-fall 1.5s ease infinite both;
+				
+				@for $i from 1 through 3 {
+					&:nth-last-of-type(#{$i}) {
+						animation-delay: calc((#{$i* 100ms}) - 300ms);
+					}
+				}
+			}
+		}
+		
+		/* rotate circles - end */
+		
+		/* pulse - start */
+		
+		@include keyframes(scaleout) {
+			0% {
+				-webkit-transform: scale(0);
+			}
+			
+			100% {
+				-webkit-transform: scale(1);
+				opacity: 0;
+			}
+		}
+		
+		.pulse {
+			width: 32px;
+			height: 32px;
+			margin: -16px 0 0 -16px;
+			background-color: currentColor;
+			border-radius: 16px;
+			animation: scaleout 1s infinite ease-in-out;
+		}
+		
+		/* pulse - end */
+		
+		/* double pulse - start */
+		
+		@include keyframes(double-pulse) {
+			0%, 100% {
+				transform: scale(0.0);
+			}
+			50% {
+				transform: scale(1.0);
+			}
+		}
+		
+		.double_pulse {
+			width: 40px;
+			height: 40px;
+			margin: -20px 0 0 -20px;
+			position: relative;
+			
+			.double-bounce1,
+			.double-bounce2 {
+				@include qodefAbsoluteLayout();
+				border-radius: 50%;
+				background-color: currentColor;
+				opacity: 0.6;
+				animation: double-pulse 2s infinite ease-in-out;
+			}
+			
+			.double-bounce2 {
+				animation-delay: -1.0s;
+			}
+			
+		}
+		
+		/* double pulse - end */
+		
+		/* cube - start */
+		
+		@include keyframes(cube) {
+			0% {
+				transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+			}
+			50% {
+				transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+			}
+			100% {
+				transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+			}
+		}
+		
+		.cube {
+			width: 60px;
+			height: 60px;
+			margin: -30px 0 0 -30px;
+			background-color: currentColor;
+			animation: cube 1.2s infinite ease-in-out;
+		}
+		
+		/* cube - end */
+		
+		/* rotating cubes - start */
+		
+		@include keyframes(rotating-cubes) {
+			25% {
+				transform: translateX(42px) rotate(-90deg) scale(0.5);
+			}
+			50% {
+				transform: translateX(42px) translateY(42px) rotate(-179deg);
+			}
+			50.1% {
+				transform: translateX(42px) translateY(42px) rotate(-180deg);
+			}
+			75% {
+				transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+			}
+			100% {
+				transform: rotate(-360deg);
+			}
+		}
+		
+		.rotating_cubes {
+			width: 32px;
+			height: 32px;
+			margin: -16px 0 0 -16px;
+			position: relative;
+			
+			.cube1,
+			.cube2 {
+				background-color: currentColor;
+				width: 10px;
+				height: 10px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				animation: rotating-cubes 1.8s infinite ease-in-out;
+			}
+			
+			.cube2 {
+				animation-delay: -0.9s;
+			}
+		}
+		
+		/* rotating cubes - end */
+		
+		/* stripes - start */
+		
+		@include keyframes(stretchdelay) {
+			0%, 40%, 100% {
+				transform: scaleY(0.4);
+			}
+			20% {
+				transform: scaleY(1.0);
+			}
+		}
+		
+		.stripes {
+			width: 50px;
+			height: 60px;
+			margin: -30px 0 0 -25px;
+			text-align: center;
+			font-size: 10px;
+			
+			> div {
+				background-color: currentColor;
+				height: 100%;
+				width: 6px;
+				display: inline-block;
+				margin: 0 3px 0 0;
+				animation: stretchdelay 1.2s infinite ease-in-out;
+			}
+			
+			@for $i from 2 through 5 {
+				.rect#{$i} {
+					animation-delay: calc((#{$i* 100ms}) - 1300ms);
+				}
+			}
+		}
+		
+		/* stripes - end */
+		
+		/* wave - start */
+		
+		@include keyframes(bouncedelay) {
+			0%, 80%, 100% {
+				transform: scale(0.0);
+			}
+			40% {
+				transform: scale(1.0);
+			}
+		}
+		
+		.wave {
+			width: 72px;
+			text-align: center;
+			margin: -9px 0 0 -36px;
+			
+			> div {
+				width: 18px;
+				height: 18px;
+				background-color: currentColor;
+				margin: 0 3px 0 0;
+				border-radius: 100%;
+				display: inline-block;
+				animation: bouncedelay 1.4s infinite ease-in-out both;
+			}
+			
+			.bounce1 {
+				animation-delay: -0.32s;
+			}
+			
+			.bounce2 {
+				animation-delay: -0.16s;
+			}
+		}
+		
+		/* wave - end */
+		
+		/* two_rotating_circles - start */
+		
+		@include keyframes(rotatecircles) {
+			to {
+				transform: rotate(360deg);
+			}
+		}
+		
+		.two_rotating_circles {
+			width: 40px;
+			height: 40px;
+			margin: -20px 0 0 -20px;
+			position: relative;
+			text-align: center;
+			animation: rotatecircles 2s infinite linear;
+			
+			.dot1,
+			.dot2 {
+				width: 60%;
+				height: 60%;
+				display: inline-block;
+				position: absolute;
+				top: 0;
+				background-color: currentColor;
+				border-radius: 100%;
+				animation: bounce 2s infinite ease-in-out;
+			}
+			
+			.dot2 {
+				top: auto;
+				bottom: 0;
+				animation-delay: -1.0s;
+			}
+		}
+		
+		/* two_rotating_circles - end */
+		
+		/* five_rotating_circles - start */
+		
+		.five_rotating_circles {
+			width: 60px;
+			height: 60px;
+			margin: -30px 0 0 -30px;
+			position: relative;
+			
+			.spinner-container {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				
+				> div {
+					background-color: currentColor;
+					border-radius: 100%;
+					position: absolute;
+					width: 12px;
+					height: 12px;
+					animation: bouncedelay 1.2s infinite ease-in-out both;
+					
+					&.circle1 {
+						top: 0;
+						left: 0;
+					}
+					
+					&.circle2 {
+						top: 0;
+						right: 0;
+					}
+					&.circle3 {
+						right: 0;
+						bottom: 0;
+					}
+					&.circle4 {
+						left: 0;
+						bottom: 0;
+					}
+				}
+				
+				&.container1 {
+					@for $i from 2 through 4 {
+						.circle#{$i} {
+							animation-delay: calc((#{$i* 300ms}) - 1500ms);
+						}
+					}
+				}
+				
+				&.container2 {
+					transform: rotateZ(45deg);
+					
+					@for $i from 1 through 4 {
+						.circle#{$i} {
+							animation-delay: calc((#{$i* 300ms}) - 1400ms);
+						}
+					}
+				}
+				
+				&.container3 {
+					transform: rotateZ(90deg);
+					
+					@for $i from 1 through 4 {
+						.circle#{$i} {
+							animation-delay: calc((#{$i* 300ms}) - 1300ms);
+						}
+					}
+				}
+				
+			}
+		}
+		
+		/* five_rotating_circles - end */
+		
+		/* atom - start */
+		
+		@include keyframes(atom_position) {
+			50% {
+				top: 80px;
+				left: 80px;
+			}
+		}
+		
+		@include keyframes(atom_size) {
+			50% {
+				transform: scale(0.5);
+			}
+		}
+		
+		@include keyframes(atom_zindex) {
+			100% {
+				z-index: 10;
+			}
+		}
+		
+		@include keyframes(atom_shrink) {
+			50% {
+				transform: scale(0.9);
+			}
+		}
+		
+		.atom {
+			width: 100px;
+			height: 100px;
+			margin: -50px 0 0 -50px;
+			position: relative;
+			
+			.ball-1 {
+				height: 50%;
+				width: 50%;
+				left: 50%;
+				top: 50%;
+				position: absolute;
+				z-index: 1;
+				animation: atom_shrink 4.5s infinite linear;
+				
+				&:before {
+					content: '';
+					background: currentColor;
+					border-radius: 50%;
+					height: 100%;
+					width: 100%;
+					position: absolute;
+					top: -50%;
+					left: -50%;
+				}
+			}
+			
+			.ball-2 {
+				animation: atom_zindex 1.5s 0.75s infinite steps(2, end);
+				
+				&:before {
+					transform: rotate(0);
+					animation: atom_position 1.5s infinite ease, atom_size 1.5s -1.125s infinite ease;
+				}
+			}
+			
+			.ball-3 {
+				transform: rotate(120deg);
+				animation: atom_zindex 1.5s -0.25s infinite steps(2, end);
+				
+				&:before {
+					animation: atom_position 1.5s -1s infinite ease, atom_size 1.5s -0.75s infinite ease;
+				}
+			}
+			
+			.ball-4 {
+				transform: rotate(240deg);
+				animation: atom_zindex 1.5s 0.25s infinite steps(2, end);
+				
+				&:before {
+					animation: atom_position 1.5s -0.5s infinite ease, atom_size 1.5s -0.125s infinite ease;
+				}
+			}
+			
+			.ball-2,
+			.ball-3,
+			.ball-4 {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				z-index: 0;
+				
+				&:before {
+					content: '';
+					height: 20px;
+					width: 20px;
+					border-radius: 50%;
+					background: currentColor;
+					top: 0;
+					left: 0;
+					margin: 0 auto;
+					position: absolute;
+				}
+			}
+		}
+		
+		/* atom - end */
+		
+		/* clock - start*/
+		
+		@include keyframes(clock) {
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+		
+		@include keyframes(clock1) {
+			0% {
+				transform: rotate(-135deg);
+			}
+			30% {
+				transform: rotate(-450deg);
+			}
+			100% {
+				transform: rotate(-450deg);
+			}
+		}
+		
+		@include keyframes(clock2) {
+			5% {
+				transform: rotate(-90deg);
+			}
+			35% {
+				transform: rotate(-405deg);
+			}
+			100% {
+				transform: rotate(-405deg);
+			}
+		}
+		
+		@include keyframes(clock3) {
+			10% {
+				transform: rotate(-45deg);
+			}
+			40% {
+				transform: rotate(-360deg);
+			}
+			100% {
+				transform: rotate(-360deg);
+			}
+		}
+		
+		@include keyframes(clock4) {
+			15% {
+				transform: rotate(0deg);
+			}
+			45% {
+				transform: rotate(-315deg);
+			}
+			100% {
+				transform: rotate(-315deg);
+			}
+		}
+		
+		.clock {
+			width: 50px;
+			height: 50px;
+			margin: -25px 0 0 -25px;
+			position: relative;
+			animation: clock 8s infinite steps(8);
+			
+			.ball {
+				height: 50px;
+				width: 50px;
+				position: absolute;
+				
+				&:before {
+					content: '';
+					border-radius: 50%;
+					height: 18.31501832px;
+					width: 18.31501832px;
+					position: absolute;
+					background: currentColor;
+				}
+				
+				&.ball-1 {
+					transform: rotate(-135deg);
+					animation: clock1 1s ease-in infinite;
+				}
+				
+				&.ball-2 {
+					transform: rotate(-90deg);
+					animation: clock2 1s ease-in infinite;
+				}
+				
+				&.ball-3 {
+					transform: rotate(-45deg);
+					animation: clock3 1s ease-in infinite;
+				}
+				
+				&.ball-4 {
+					animation: clock4 1s ease-in infinite;
+				}
+				
+			}
+		}
+		
+		/* clock - end*/
+		
+		/* mitosis - start*/
+		
+		@include keyframes(mitosis_invert) {
+			100% {
+				transform: rotate(180deg);
+			}
+		}
+		
+		@include keyframes(mitosis_ball1) {
+			12% {
+				transform: none;
+			}
+			26% {
+				transform: translateX(25%) scale(1, 0.8);
+			}
+			40% {
+				transform: translateX(50%) scale(0.8, 0.8);
+			}
+			60% {
+				transform: translateX(50%) scale(0.8, 0.8);
+			}
+			74% {
+				transform: translate(50%, 25%) scale(0.6, 0.8);
+			}
+			88% {
+				transform: translate(50%, 50%) scale(0.6, 0.6);
+			}
+			100% {
+				transform: translate(50%, 50%) scale(0.6, 0.6);
+			}
+		}
+		
+		@include keyframes(mitosis_ball2) {
+			12% {
+				transform: none;
+			}
+			26% {
+				transform: translateX(25%) scale(1, 0.8);
+			}
+			40% {
+				transform: translateX(50%) scale(0.8, 0.8);
+			}
+			60% {
+				transform: translateX(50%) scale(0.8, 0.8);
+			}
+			74% {
+				transform: translate(50%, -25%) scale(0.6, 0.8);
+			}
+			88% {
+				transform: translate(50%, -50%) scale(0.6, 0.6);
+			}
+			100% {
+				transform: translate(50%, -50%) scale(0.6, 0.6);
+			}
+		}
+		
+		@include keyframes(mitosis_ball3) {
+			12% {
+				transform: none;
+			}
+			26% {
+				transform: translateX(-25%) scale(1, 0.8);
+			}
+			40% {
+				transform: translateX(-50%) scale(0.8, 0.8);
+			}
+			60% {
+				transform: translateX(-50%) scale(0.8, 0.8);
+			}
+			74% {
+				transform: translate(-50%, 25%) scale(0.6, 0.8);
+			}
+			88% {
+				transform: translate(-50%, 50%) scale(0.6, 0.6);
+			}
+			100% {
+				transform: translate(-50%, 50%) scale(0.6, 0.6);
+			}
+		}
+		
+		@include keyframes(mitosis_ball4) {
+			12% {
+				transform: none;
+			}
+			26% {
+				transform: translateX(-25%) scale(1, 0.8);
+			}
+			40% {
+				transform: translateX(-50%) scale(0.8, 0.8);
+			}
+			60% {
+				transform: translateX(-50%) scale(0.8, 0.8);
+			}
+			74% {
+				transform: translate(-50%, -25%) scale(0.6, 0.8);
+			}
+			88% {
+				transform: translate(-50%, -50%) scale(0.6, 0.6);
+			}
+			100% {
+				transform: translate(-50%, -50%) scale(0.6, 0.6);
+			}
+		}
+		
+		.mitosis {
+			height: 50px;
+			width: 50px;
+			margin: -25px 0 0 -25px;
+			position: relative;
+			animation: mitosis_invert 2s infinite steps(2, end);
+			
+			.ball {
+				border-radius: 50%;
+				@include qodefAbsoluteLayout();
+				background: currentColor;
+				
+				@for $i from 1 through 4 {
+					&.ball-#{$i} {
+						animation: mitosis_ball#{$i} 1s infinite alternate linear;
+					}
+				}
+			}
+		}
+		
+		/* mitosis - end*/
+		
+		/* lines - start*/
+		
+		@include keyframes(lines_spin) {
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+		
+		.lines {
+			width: 60px;
+			height: 60px;
+			margin: 0 0 0 -30px;
+			
+			@for $i from 1 through 4 {
+				.line#{$i} {
+					margin-left: 10px;
+					position: absolute;
+					width: 60px;
+					height: 4px;
+					background-color: currentColor;
+					animation: lines_spin 1.5s infinite ease calc((#{$i* 100ms}) - 100ms);
+				}
+			}
+		}
+		
+		/* lines - end*/
+		
+		/* fussion - start*/
+		
+		@include keyframes(fussion_ball1) {
+			50% {
+				top: -100%;
+				left: 200%;
+			}
+			100% {
+				top: 50%;
+				left: 100%;
+				z-index: 2;
+			}
+		}
+		
+		@include keyframes(fussion_ball2) {
+			50% {
+				top: 200%;
+				left: 200%;
+			}
+			100% {
+				top: 100%;
+				left: 50%;
+				z-index: 1;
+			}
+		}
+		
+		@include keyframes(fussion_ball3) {
+			50% {
+				top: 200%;
+				left: -100%;
+			}
+			100% {
+				top: 50%;
+				left: 0;
+				z-index: 2;
+			}
+		}
+		
+		@include keyframes(fussion_ball4) {
+			50% {
+				top: -100%;
+				left: -100%;
+			}
+			100% {
+				top: 0;
+				left: 50%;
+				z-index: 1;
+			}
+		}
+		
+		.fussion {
+			width: 30px;
+			height: 30px;
+			margin: -45px 0 0 -30px;
+			position: relative;
+			
+			.ball {
+				height: 40px;
+				width: 40px;
+				left: 50%;
+				top: 50%;
+				background: currentColor;
+				border-radius: 50%;
+				float: left;
+				position: absolute;
+				
+				&.ball-1 {
+					top: 0;
+					left: 50%;
+					animation: fussion_ball1 1s 0s ease infinite;
+					z-index: 1;
+				}
+				
+				&.ball-2 {
+					top: 50%;
+					left: 100%;
+					animation: fussion_ball2 1s 0s ease infinite;
+					z-index: 2;
+				}
+				
+				&.ball-3 {
+					top: 100%;
+					left: 50%;
+					animation: fussion_ball3 1s 0s ease infinite;
+					z-index: 1;
+				}
+				
+				&.ball-4 {
+					top: 50%;
+					left: 0;
+					animation: fussion_ball4 1s 0s ease infinite;
+					z-index: 2;
+				}
+			}
+		}
+		
+		/* fussion - end*/
+		
+		/* wave_circles - start*/
+		
+		@include keyframes(wave_jump1) {
+			12% {
+				transform: translate(20px, -40px);
+				animation-timing-function: ease-in;
+			}
+			24%, 100% {
+				transform: translate(40px, 0);
+			}
+		}
+		
+		@include keyframes(wave_jump2) {
+			12% {
+				transform: translate(0, 0);
+			}
+			24% {
+				transform: translate(20px, -40px);
+				animation-timing-function: ease-in;
+			}
+			36%, 100% {
+				transform: translate(40px, 0);
+			}
+		}
+		
+		@include keyframes(wave_jump3) {
+			24% {
+				transform: translate(0, 0);
+			}
+			36% {
+				transform: translate(20px, -40px);
+				animation-timing-function: ease-in;
+			}
+			48%, 100% {
+				transform: translate(40px, 0);
+			}
+		}
+		
+		@include keyframes(wave_wipe) {
+			48%, 100% {
+				transform: translateX(-120px);
+			}
+		}
+		
+		.wave_circles {
+			width: 150px;
+			height: 30px;
+			margin: -15px 0 0 -75px;
+			
+			.ball {
+				height: 30px;
+				width: 30px;
+				float: left;
+				background: currentColor;
+				border-radius: 50%;
+				margin-right: 10px;
+				
+				&.ball-1 {
+					animation: wave_jump3 1.8s infinite ease-out;
+				}
+				
+				&.ball-2 {
+					animation: wave_jump2 1.8s infinite ease-out;
+				}
+				
+				&.ball-3 {
+					animation: wave_jump1 1.8s infinite ease-out;
+				}
+				&.ball-4 {
+					margin-right: 0;
+					animation: wave_wipe 1.8s infinite cubic-bezier(0.5, 0, 0.5, 1);
+				}
+			}
+		}
+		
+		/* wave_circles - end*/
+		
+		/* pulse_circles - start*/
+		
+		@include keyframes(pulse_circles_pulse) {
+			0% {
+				transform: scale(.1);
+				opacity: 1;
+				border-width: 50px;
+			}
+			100% {
+				transform: scale(1, 1);
+				opacity: 0;
+				border-width: 0;
+			}
+		}
+		
+		.pulse_circles {
+			width: 100px;
+			height: 100px;
+			margin: -50px 0 0 -50px;
+			position: relative;
+			
+			.ball {
+				height: 100%;
+				width: 100%;
+				background: currentColor;
+				position: absolute;
+				box-sizing: border-box;
+				border-radius: 50%;
+				border: 0 solid currentColor;
+				
+				@for $i from 1 through 4 {
+					&.ball-#{$i} {
+						animation: pulse_circles_pulse 3s infinite calc((#{$i* -750ms}) + 750ms);
+					}
+				}
+			}
+		}
+		/* pulse_circles - end*/
+	}
+}

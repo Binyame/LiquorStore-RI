@@ -1,0 +1,48 @@
+/* ==========================================================================
+   WooCommerce results and ordering styles
+   ========================================================================== */
+
+.qodef-woo-results {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin-bottom: 9px;
+
+	.woocommerce-notices-wrapper {
+		flex-shrink: 0;
+		width: 100%;
+	}
+
+	.woocommerce-result-count {
+		font-size: 14px;
+	}
+	
+	.woocommerce-ordering {
+
+		select {
+			@include qodefWooSelect2Style();
+		}
+		
+		.select2-container--default {
+			margin: 0;
+			
+			@media screen and (max-width: 680px) {
+				margin-bottom: 10px;
+			}
+
+			.select2-selection--single {
+				border: 0;
+				
+				@media screen and (max-width: 680px) {
+					padding-left: 0;
+				}
+
+				.select2-selection__arrow {
+					justify-content: flex-end;
+				}
+			}
+		}
+	}
+}

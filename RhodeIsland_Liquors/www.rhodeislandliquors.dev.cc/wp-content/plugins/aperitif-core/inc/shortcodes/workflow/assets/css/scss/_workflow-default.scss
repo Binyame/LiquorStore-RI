@@ -1,0 +1,256 @@
+.qodef-workflow {
+	@include qodefRelativeLayout();
+	
+	@include qodefScreenSize1024 {
+		display: flex;
+		justify-content: space-evenly;
+	}
+	
+	@include qodefScreenSize680 {
+		flex-direction: column;
+	}
+	
+	.qodef-e-workflow-image {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		
+		@include qodefScreenSize1024 {
+			display: none;
+		}
+	}
+	
+	.qodef-e-workflow-item {
+		display: flex;
+		margin-bottom: -37px;
+		
+		@include qodefScreenSize1024 {
+			margin-bottom: 30px;
+		}
+		
+		@include qodefScreenSize680 {
+			justify-content: center !important;
+			text-align: center !important;
+		}
+		
+		&:nth-child(even) {
+			justify-content: flex-start;
+			text-align: right;
+			
+			.qodef-e-workflow-item-inner {
+				transform: translateX(34%);
+				
+				@include qodefScreenSize1440 {
+					transform: none;
+				}
+				
+				&:after {
+					left: calc(100% + 30px);
+
+					@include qodefScreenSize1024 {
+						content: none;
+					}
+				}
+			}
+		}
+		
+		&:nth-child(odd) {
+			justify-content: flex-end;
+			text-align: left;
+			
+			.qodef-e-workflow-item-inner {
+				transform: translateX(-34%);
+				
+				@include qodefScreenSize1440 {
+					transform: none;
+				}
+				
+				&:after {
+					right: calc(100% + 30px);
+
+					@include qodefScreenSize1024 {
+						content: none;
+					}
+				}
+			}
+		}
+	}
+	
+	.qodef-e-workflow-item-inner {
+		max-width: 260px;
+		position: relative;
+		
+		&:after {
+			content: '';
+			max-width: 200px;
+			height: 1px;
+			display: block;
+			position: absolute;
+			top: 70px;
+			background: $main-color;
+			width: 100%;
+			transition: .5s;
+			
+			@include qodefScreenSize1440 {
+				width: 50%;
+			}
+			
+			@include qodefScreenSize1280 {
+				width: 20%;
+			}
+			
+			@include qodefScreenSize1024 {
+				content: none;
+			}
+		}
+	}
+	
+	.qodef-e-subtitle {
+		font-size: 15px;
+		font-style: italic;
+		color: $main-color;
+		margin: 0;
+	}
+	
+	.qodef-e-title {
+		letter-spacing: .1em;
+		margin: 3px 0 0;
+	}
+}
+
+.qodef-workflows-holder {
+
+	.qodef-workflow {
+		
+		.qodef-e-workflow-image {
+
+			opacity: 0;
+			transition: 1s .3s;
+		}
+	
+		.qodef-e-workflow-item:nth-child(2) {
+	
+			
+			.qodef-e-workflow-item-inner {
+					
+				&:after {
+					width: 0;
+				}
+			}
+	
+			.qodef-e-subtitle {
+				opacity: 0;
+				transform: translateY(10px);
+				transition: .5s;
+			}
+	
+			.qodef-e-title {
+				opacity: 0;
+				transform: translateY(10px);
+				transition: .5s .1s;
+			}
+	
+			.qodef-e-text {
+				opacity: 0;
+				transform: translateY(10px);
+				transition: .5s .2s;
+			}
+		}
+	
+		.qodef-e-workflow-item:nth-child(3) {
+	
+			.qodef-e-workflow-item-inner {
+					
+				&:after {
+					width: 0;
+				}
+			}
+	
+			.qodef-e-subtitle {
+				opacity: 0;
+				transform: translateY(10px);
+				transition: .5s .3s;
+			}
+	
+			.qodef-e-title {
+				opacity: 0;
+				transform: translateY(10px);
+				transition: .5s .4s;
+			}
+	
+			.qodef-e-text {
+				opacity: 0;
+				transform: translateY(10px);
+				transition: .5s .5s;
+			}
+		}
+	
+		&.qodef--appear {
+			
+			.qodef-e-workflow-image {
+				opacity: 1;
+			}
+	
+			.qodef-e-workflow-item:nth-child(2) {
+	
+				.qodef-e-workflow-item-inner {
+					
+					&:after {
+						width: 100%;
+						transition: 1s .2s;
+
+						@include qodefScreenSize1440 {
+							width: 50% !important;
+						}
+					}
+				}
+	
+				.qodef-e-subtitle {
+					opacity: 1;
+					transform: translateY(0);
+				}
+	
+				.qodef-e-title {
+					opacity: 1;
+					transform: translateY(0);
+				}
+	
+				.qodef-e-text {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+	
+			.qodef-e-workflow-item:nth-child(3) {
+				
+				.qodef-e-workflow-item-inner {
+					
+					&:after {
+						width: 100%;
+						transition: 1s .3s;
+
+						@include qodefScreenSize1440 {
+							width: 50% !important;
+						}
+					}
+				}
+	
+				.qodef-e-subtitle {
+					opacity: 1;
+					transform: translateY(0);
+				}
+	
+				.qodef-e-title {
+					opacity: 1;
+					transform: translateY(0);
+				}
+	
+				.qodef-e-text {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+		}
+	}
+}

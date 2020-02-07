@@ -1,0 +1,110 @@
+.qodef-team {
+	@include qodefRelativeLayout();
+	
+	.qodef-m-image {
+		@include qodefRelativeLayout();
+		display: block;
+		overflow: hidden;
+	}
+	
+	.qodef-m-team-info {
+		@include qodefRelativeLayout();
+		display: block;
+		flex-direction: column;
+		text-align: left;
+		margin: 33px 0 0;
+		
+		.qodef-m-name {
+			margin: 0 0 2px;
+		}
+		
+		.qodef-m-position {
+			margin: 4px 0 0;
+			color: $main-color;
+			font-size: 15px;
+		}
+		
+		.qodef-m-text {
+			margin: 14px 0 0;
+		}
+		
+		.qodef-m-social-icons-group {
+			margin: 22px 0 0;
+			
+			.qodef-icon-holder {
+				margin: 0 10px 0 0;
+				border: 1px solid $border-color;
+				background-color: #fff;
+				color: $main-color;
+				
+				&:hover {
+					color: #fff;
+					background-color: $main-color;
+					border: 1px solid $main-color;
+				}
+			}
+		}
+	}
+}
+
+.qodef-team-holder-row {
+
+	.qodef-team {
+	
+		img {
+			clip-path: inset(0 0 100% 0);
+			-webkit-clip-path: inset(0 0 100% 0);
+			transition: 1.4s cubic-bezier(0.45, 0.2, 0.05, 1.1);
+		}
+	
+		.qodef-m-name {
+			opacity: 0;
+			transform: translateY(10px);
+			transition: .7s;
+		}
+
+		.qodef-m-position {
+			opacity: 0;
+			transform: translateY(10px);
+			transition: .7s .2s;
+		}
+
+		.qodef-m-text {
+			opacity: 0;
+			transform: translateY(10px);
+			transition: .7s .3s;
+		}
+
+		.qodef-m-social-icons-group {
+
+			.qodef-icon-holder {
+				opacity: 0;
+				transform: translateY(10px);
+
+				&:nth-child(1) {
+					transition: transform .7s .4s, color .2s ease-out,background-color .2s ease-out,border-color .2s ease-out;
+				}
+
+				&:nth-child(2) {
+					transition: transform .7s .5s, color .2s ease-out,background-color .2s ease-out,border-color .2s ease-out;
+				}
+
+				&:nth-child(3) {
+					transition: transform .7s .6s, color .2s ease-out,background-color .2s ease-out,border-color .2s ease-out;
+				}
+			}
+		}
+	
+		&.qodef--appear {
+			img {
+				clip-path: inset(0 0 0 0);
+				-webkit-clip-path: inset(0 0 0 0);
+			}
+	
+			.qodef-m-name, .qodef-m-position, .qodef-m-text, .qodef-icon-holder {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+	}
+}

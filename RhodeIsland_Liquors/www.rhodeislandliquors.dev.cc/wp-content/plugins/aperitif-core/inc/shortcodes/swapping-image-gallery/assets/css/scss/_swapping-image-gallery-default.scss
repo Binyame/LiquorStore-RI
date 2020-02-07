@@ -1,0 +1,140 @@
+/* ==========================================================================
+   Swapping image gallery shortcode style - begin
+   ========================================================================== */
+
+.qodef-swapping-image-gallery {
+	position: relative;
+	overflow: hidden;
+	margin: 0 -20px;
+	
+	.qodef-m-swapping-image-gallery-inner {
+		padding: 20px;
+		display: flex;
+		align-content: space-between;
+	}
+	
+	.qodef-m-info {
+		flex-basis: 37%;
+		margin-right: 7%;
+	}
+	
+	.qodef-m-image-holder {
+		flex-grow: 1;
+		flex-basis: 0;
+		overflow: hidden;
+		box-shadow: 0 0 12px 0 rgba(31, 26, 23, 0.12);
+		
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			
+			@media screen and (max-width: 1024px) and (min-width: 769px) {
+				height: 100%;
+			}
+		}
+	}
+	
+	.qodef-m-info {
+		
+		.qodef-m-thumbnails-holder {
+			
+			.swiper-pagination-custom {
+				width: auto;
+			}
+			
+			.qodef-m-thumbnail {
+				font-size: 0;
+				cursor: pointer;
+				box-sizing: border-box;
+				
+				.qodef-m-thumbnail-inner {
+					position: relative;
+					
+					&:before {
+						@include qodefAbsoluteLayout();
+						transition: opacity .3s ease-out;
+						opacity: 0;
+						z-index: -1;
+						content: '';
+						background: url('../img/swapping-background.jpg') no-repeat center center #fbf9f5;
+					}
+					
+					&:after {
+						@include qodefAbsoluteLayout();
+						transition: opacity .3s ease-out;
+						opacity: 0;
+						content: '';
+						background: #fff;
+					}
+				}
+				
+				h6 {
+					@include qodefButtonLinePseudos(8px, 0);
+				}
+				
+				&:hover {
+					
+					.qodef-m-thumbnail-inner {
+						
+						&:after {
+							opacity: .4;
+						}
+					}
+					
+					h6 {
+						@include qodefButtonLinePseudosActive();
+						
+						&:before {
+							animation: qodefButtonTranslateLeft .5s;
+						}
+						
+						&:after {
+							animation: qodefButtonTranslateRight .5s;
+						}
+					}
+				}
+				
+				&.qodef--active {
+					
+					.qodef-m-thumbnail-inner {
+						
+						&:before {
+							opacity: 1;
+						}
+					}
+					
+					h6 {
+						@include qodefButtonLinePseudosActive();
+						
+						&:before {
+							animation: qodefButtonTranslateLeft .5s;
+						}
+						
+						&:after {
+							animation: qodefButtonTranslateRight .5s;
+						}
+					}
+				}
+				
+				img {
+					display: block;
+					width: 100%;
+				}
+				
+				h6 {
+					font-size: 15px;
+					color: $heading-color;
+					margin: 13px 0 6px;
+					text-align: center;
+				}
+			}
+			
+		}
+	}
+}
+
+/* ==========================================================================
+   Swapping image gallery shortcode style - end
+   ========================================================================== */

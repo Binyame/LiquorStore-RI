@@ -1,0 +1,29 @@
+/* ==========================================================================
+   Author Info responsive styles
+   ========================================================================== */
+
+#qodef-author-info {
+	
+	@include qodefScreenSize768 {
+		.qodef-m-inner {
+			padding: 50px 7% 50px 50px;
+		}
+	}
+	
+	@include qodefScreenSize680 {
+		
+		.qodef-m-inner {
+			flex-wrap: wrap;
+			padding: 30px 30px 49px;
+		}
+		
+		.qodef-m-image {
+			flex-shrink: 1;
+			margin-right: 0;
+		}
+		
+		.qodef-m-content {
+			margin-top: 23px;
+		}
+	}
+}

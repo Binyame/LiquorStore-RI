@@ -1,0 +1,30 @@
+/* Clients list shortcode style - start */
+.qodef-clients-list {
+
+	&.qodef-grid {
+		.qodef-grid-inner {
+
+			border-top: 1px solid $border-color;
+			border-left: 1px solid $border-color;
+
+			.qodef-e {
+
+				border-bottom: 1px solid $border-color;
+				border-right: 1px solid $border-color;
+				margin: 0 !important;
+			}
+
+		}
+	}
+
+	.qodef-e {
+		@include qodefRelativeLayout();
+
+	}
+
+	.swiper-pagination-bullets {
+		bottom: -12px !important;
+	}
+}
+
+/* Clients list shortcode style - end */

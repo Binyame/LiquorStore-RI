@@ -1,0 +1,88 @@
+/* ==========================================================================
+   YITH Wish List button default styles
+   ========================================================================== */
+
+// wishlist holder gets added on the lists only, this css global, and not including the lists
+:not(.qodef-woo-product-wishlist-holder) {
+
+	> .yith-wcwl-add-to-wishlist {
+		margin-top: 23px;
+
+		.yith-wcwl-add-button {
+
+			> span, img {
+				display: none !important;
+			}
+
+			a {
+				display: flex !important;
+				font-size: 15px;
+				font-family: $heading-font;
+				letter-spacing: .13em;
+
+				&:before {
+					font-family: "linea-basic-10" !important;
+					content: "W";
+					font-size: 17px;
+					display: block;
+					margin-right: 6px;
+					color: $main-color;
+				}
+			}
+		}
+
+		.yith-wcwl-wishlistaddedbrowse {
+
+			> span, img {
+				display: none !important;
+			}
+
+			a {
+				display: flex !important;
+				font-size: 15px;
+				font-family: $heading-font;
+				letter-spacing: .13em;
+
+				&:before {
+					font-family: "linea-basic-elaboration-10" !important;
+					content: "C";
+					font-size: 20px;
+					display: block;
+					margin-right: 6px;
+					color: $main-color;
+				}
+			}
+		}
+
+		.yith-wcwl-wishlistexistsbrowse {
+
+			> span, img {
+				display: none !important;
+			}
+
+			a {
+				display: flex !important;
+				font-size: 15px;
+				font-family: $heading-font;
+				letter-spacing: .13em;
+
+				&:before {
+					font-family: "linea-basic-elaboration-10" !important;
+					content: "C";
+					font-size: 17px;
+					display: block;
+					margin-right: 6px;
+					color: $main-color;
+				}
+			}
+		}
+
+		.ajax-loading {
+			display: none !important;
+		}
+
+		.yith-wcwl-wishlistaddresponse {
+			display: none !important;
+		}
+	}
+}

@@ -1,0 +1,22 @@
+/* Fixed header style - start */
+
+.qodef-header--fixed-display {
+
+	#qodef-top-area,
+	#qodef-page-header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
+
+	&.admin-bar {
+
+		#qodef-top-area,
+		#qodef-page-header {
+			top: 32px;
+		}
+	}
+}
+
+/* Fixed header style - end */

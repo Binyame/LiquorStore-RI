@@ -1,0 +1,134 @@
+/* ==========================================================================
+   WooCommerce single styles
+   ========================================================================== */
+
+#qodef-woo-page {
+
+	&.qodef--single {
+
+		@include qodefScreenSize1024 {
+
+			.qodef-woo-single-inner {
+				flex-wrap: wrap;
+			}
+
+			.entry-summary {
+				margin-top: 60px;
+			}
+			
+			.woocommerce-tabs .wc-tabs {
+				
+				li {
+					margin: 0 18px;
+				}
+			}
+		}
+		
+		@include qodefScreenSize768 {
+
+			.woocommerce-tabs .wc-tabs {
+				flex-direction: column;
+				
+				li {
+					margin: 0 0 20px;
+					
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+
+		@include qodefScreenSize680 {
+
+			.qodef-woo-single-image {
+
+				.woocommerce-product-gallery {
+
+					&.qodef-position--left {
+
+						.woocommerce-product-gallery__trigger {
+							left: 10px;
+						}
+
+						@for $i from 0 to $grid-columns-layout-size {
+							$column: $i + 1;
+
+							&.woocommerce-product-gallery--columns-#{$column} {
+
+								@if ($column > 3) {
+
+									figure {
+
+										> .qodef-woo-thumbnails-wrapper {
+
+											.woocommerce-product-gallery__image {
+												width: 50% !important;
+											}
+										}
+									}
+								}
+							}
+						}
+
+						figure {
+							flex-wrap: wrap;
+
+							> .woocommerce-product-gallery__image {
+								width: 100% !important;
+							}
+
+							> .qodef-woo-thumbnails-wrapper {
+								width: 100% !important;
+								display: flex;
+								flex-wrap: wrap;
+
+								.woocommerce-product-gallery__image {
+
+									&:first-child {
+										margin-top: #{2 * $woo-product-image-gutter}px !important;
+									}
+								}
+							}
+						}
+					}
+
+					&.qodef-position--below {
+
+						@for $i from 0 to $grid-columns-layout-size {
+							$column: $i + 1;
+
+							&.woocommerce-product-gallery--columns-#{$column} {
+
+								@if ($column > 3) {
+
+									figure {
+
+										> .qodef-woo-thumbnails-wrapper {
+
+											.woocommerce-product-gallery__image {
+												width: 50% !important;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+			.woocommerce-tabs .wc-tabs {
+
+				li {
+					font-size: 16px;
+				}
+			}
+			
+			form.cart {
+				flex-direction: column;
+			}
+		}
+	}
+}
+

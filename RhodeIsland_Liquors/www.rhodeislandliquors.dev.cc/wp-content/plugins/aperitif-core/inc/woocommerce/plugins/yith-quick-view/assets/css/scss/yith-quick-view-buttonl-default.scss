@@ -1,0 +1,11 @@
+/* ==========================================================================
+   YITH Quick View button default styles
+   ========================================================================== */
+
+.yith-wcqv-button {
+	@include qodefButtonDefaultStyle();
+
+	.blockUI {
+		display: none !important;
+	}
+}

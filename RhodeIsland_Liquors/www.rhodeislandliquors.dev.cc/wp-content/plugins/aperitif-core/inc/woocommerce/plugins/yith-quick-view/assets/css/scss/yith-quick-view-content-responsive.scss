@@ -1,0 +1,64 @@
+/* ==========================================================================
+   YITH Quick View Content responsive styles
+   ========================================================================== */
+
+body {
+	#yith-quick-view-modal {
+
+		@include qodefScreenSize768 {
+
+			[id*=product] {
+				flex-direction: column;
+			}
+
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			// left side stuff
+
+			.qodef-woo-single-image {
+				width: 100%;
+			}
+
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			// right side stuff
+
+			.summary {
+				margin-left: 0 !important;
+				width: 100% !important;
+			}
+
+			.qodef-woo-product-title {
+				@include qodefH4Style();
+				margin-top: 18px;
+			}
+
+			.woocommerce-product-rating {
+				margin-top: 10px;
+			}
+
+			.woocommerce-product-details__short-description {
+				margin-top: 15px;
+			}
+
+			form.cart {
+				margin-top: 32px;
+			}
+			
+			
+		}
+
+		@include qodefScreenSize480 {
+
+			.woocommerce-product-details__short-description {
+				display: none;
+			}
+			
+			.qodef-woo-product-title {
+				@include qodefH5Style();
+			}
+			
+			.qodef-quantity-buttons {
+				display: none;
+			}
+		}
+	}
+}

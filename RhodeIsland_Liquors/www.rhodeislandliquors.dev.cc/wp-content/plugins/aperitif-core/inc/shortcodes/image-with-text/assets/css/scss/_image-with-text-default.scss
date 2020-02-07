@@ -1,0 +1,128 @@
+/* ==========================================================================
+   Image With Text shortcode styles
+   ========================================================================== */
+
+.qodef-image-with-text {
+	@include qodefRelativeLayout();
+	
+	&.qodef-layout--text-below {
+		
+		.qodef-m-image {
+			@include qodefRelativeLayout();
+			transition: .5s;
+			box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.12);
+			text-shadow: 0 0 12px rgba(0, 0, 0, 0.12);
+			
+			a, img {
+				position: relative;
+				display: block;
+				@include qodefTransition(all .3s ease);
+			}
+		}
+		
+		.qodef-m-content {
+			@include qodefRelativeLayout();
+			text-align: center;
+		}
+		
+		.qodef-m-title {
+			margin: 19px 0 0;
+			font-size: 15px;
+			@include qodefButtonLinePseudos();
+			
+			a:hover {
+				color: inherit;
+			}
+		}
+		
+		.qodef-m-text {
+			margin: 15px 0 0;
+		}
+		
+		&:hover {
+			
+			.qodef-m-image {
+				@include qodefTransform(translate(0, -5px));
+			}
+
+			.qodef-m-title {
+				&:before, &:after {
+					opacity: 1;
+					transform: scaleX(1);
+					transition: .3s cubic-bezier(0.22, 0.75, 0.39, 0.92);
+				}
+			}
+		}
+	}
+	
+	&.qodef-layout--text-over {
+		width: auto;
+		
+		img {
+			width: 100%;
+		}
+		
+		.qodef-m-image {
+			@include qodefRelativeLayout();
+			display: block;
+		}
+		
+		.qodef-m-title-holder {
+			position: absolute;
+			top: 0;
+			right: 0;
+			
+			.qodef-m-title {
+				font-size: 183px;
+				margin: 0;
+				opacity: .15;
+				font-style: italic;
+				line-height: 1;
+				transform: translate(28%, -61%);
+				letter-spacing: 0;
+				
+				@media screen and (max-width: 1280px) {
+					font-size: 150px;
+					transform: translate(20%, -61%);
+				}
+				
+				@media screen and (max-width: 1024px) {
+					font-size: 150px;
+				}
+				
+				@media screen and (max-width: 768px) {
+					font-size: 100px;
+				}
+				
+				@media screen and (max-width: 680px) {
+					font-size: 40px;
+				}
+			}
+		}
+		
+		.qodef-m-content {
+			@include qodefRelativeLayout();
+			text-align: right;
+		}
+		
+		.qodef-m-text {
+			color: #9d9796;
+			font-size: 15px;
+			margin: 7px 0 0;
+		}
+	}
+}
+
+.qodef-itw-landing {
+
+	.qodef-image-with-text {
+		opacity: 0;
+		transform: translateY(20px);
+		transition: 1s;
+
+		&.qodef--appear {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+}

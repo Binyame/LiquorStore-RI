@@ -1,0 +1,130 @@
+/* Standard header layout style - start */
+
+.qodef-header-padding {
+	
+	.qodef-woo-dropdown-cart .qodef-m-dropdown-inner {
+		background-image: none;
+		background-color: #fbf9f5;
+	}
+	
+	&.qodef-header-standard--left,
+	&.qodef-header-standard--right {
+		
+		#qodef-page-header {
+			margin: 40px 50px;
+			width: calc(100% - 100px);
+			
+			.qodef-header-navigation .qodef-menu-item--narrow .qodef-drop-down-second > .qodef-drop-down-second-inner > ul {
+				background-image: none;
+				background-color: #fbf9f5;
+			}
+			
+			.qodef-header-navigation .qodef-menu-item--wide .qodef-drop-down-second {
+				background-image: none;
+				background-color: #fbf9f5;
+			}
+			
+			.qodef-header-navigation .qodef-menu-item--wide .qodef-drop-down-second > .qodef-drop-down-second-inner > ul {
+				background-image: none;
+				background-color: #fbf9f5;
+			}
+		}
+		
+		&.qodef-header--sticky-display {
+			
+			.qodef-header-sticky {
+				padding: 0 90px;
+				width: 100%;
+			}
+		}
+	}
+}
+
+.error404 {
+	
+	&.qodef-header-standard--left,
+	&.qodef-header-standard--right {
+		
+		#qodef-page-header {
+			
+			.qodef-header-navigation .qodef-menu-item--narrow .qodef-drop-down-second > .qodef-drop-down-second-inner > ul {
+				background-image: none;
+				background-color: #fbf9f5;
+			}
+			
+			.qodef-header-navigation .qodef-menu-item--wide .qodef-drop-down-second {
+				background-image: none;
+				background-color: #fbf9f5;
+			}
+			
+			.qodef-header-navigation .qodef-menu-item--wide .qodef-drop-down-second > .qodef-drop-down-second-inner > ul {
+				background-image: none;
+				background-color: #fbf9f5;
+			}
+		}
+	}
+	
+	#qodef-page-footer {
+		display: none;
+	}
+}
+
+#qodef-page-header-inner {
+	
+	.qodef-header-standard--right & {
+		
+		.qodef-header-logo-link {
+			margin-right: auto;
+		}
+		
+		.qodef-widget-holder {
+			margin-left: 35px;
+			
+			.widget {
+				min-width: 58px;
+				max-height: 58px;
+				//padding: 0 5px;
+				line-height: 58px;
+				text-align: center;
+				border: 1px solid #000;
+				margin: 0 -1px 0 0;
+			}
+			
+			p {
+				line-height: 25px;
+			}
+		}
+	}
+	
+	.qodef-header-standard--left & {
+		justify-content: flex-start;
+		
+		.qodef-header-navigation {
+			margin-left: 20px;
+		}
+		
+		.qodef-widget-holder {
+			margin-left: auto;
+			
+			.widget {
+				min-width: 58px;
+				max-height: 58px;
+				//padding: 0 5px;
+				line-height: 58px;
+				text-align: center;
+				border: 1px solid #000;
+				margin: 0 -1px 0 0;
+				
+				a {
+					color: #000;
+				}
+			}
+			
+			p {
+				line-height: 25px;
+			}
+		}
+	}
+}
+
+/* Standard header layout style - end */

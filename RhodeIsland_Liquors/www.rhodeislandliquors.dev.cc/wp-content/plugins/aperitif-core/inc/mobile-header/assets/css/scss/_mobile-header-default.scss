@@ -1,0 +1,23 @@
+#qodef-page-mobile-header {
+	background-color: #fff;
+
+	.qodef-mobile-header--sticky & {
+		width: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		transform: translateY(-100%);
+	}
+
+	.qodef-mobile-header--sticky-animation & {
+		transition: transform 0.3s ease, top 0.3s ease;
+	}
+
+	.qodef-mobile-header--sticky-display & {
+		transform: translateY(0%);
+	}
+
+	.admin-bar.qodef-mobile-header--sticky-display & {
+		top: 46px;
+	}
+}

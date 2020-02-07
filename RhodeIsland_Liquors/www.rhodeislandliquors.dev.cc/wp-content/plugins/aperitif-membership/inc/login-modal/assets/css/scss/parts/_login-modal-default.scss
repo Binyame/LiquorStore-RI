@@ -1,0 +1,243 @@
+/* ==========================================================================
+   Login modal global styles
+   ========================================================================== */
+
+#qodef-membership-login-modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	visibility: hidden;
+	opacity: 0;
+	z-index: 1999;
+	transition: $opacity-transition;
+
+	&.qodef--opened {
+
+		.qodef-membership-login-modal-overlay {
+			cursor: none;
+		}
+	}
+	
+	.qodef-membership-login-modal-overlay {
+		@include qodefAbsoluteLayout();
+		background-color: rgba(#2e180d, .2);
+		transition: .3s;
+	}
+	
+	.qodef-membership-login-modal-content {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		width: 445px;
+		background: url('../img/login-background.png') no-repeat top right #fff;
+		z-index: 2;
+		box-shadow: 0 0 44.37px 6.63px rgba(0, 0, 0, 0.14);
+		transition: .3s;
+		transform: translateY(20px);
+		opacity: 0;
+	}
+	
+	.qodef-membership-login-modal-navigation {
+		display: none;
+	}
+	
+	form {
+		@include qodefRelativeLayout();
+	
+		.qodef-membership-login-modal-holder {
+			padding: 25px 35px 42px;
+			
+			@media screen and (max-width: 1366px) {
+				padding: 25px 35px 20px;
+			}
+		}
+
+		h4 {
+			margin-bottom: 21px;
+		}
+
+		h5 {
+			letter-spacing: .11em;
+			max-width: 80%;
+			margin-bottom: 19px;
+		}
+
+		label {
+			margin: 0;
+			font-size: 14px;
+			display: inline-block;
+			
+			&.required {
+				
+				&:after {
+					color: $main-color;
+					content: "*";
+					position: absolute;
+				}
+			}
+		}
+
+		input:not([type='checkbox']) {
+			background-color: #fff;
+			margin-bottom: 8px;
+		}
+
+		.qodef-m-links-reset-password {
+
+			p {
+				font-size: 14px;
+				color: $main-color;
+
+				&:hover {
+					color: $main-color-hover;
+				}
+			}
+		}
+		
+		&.qodef--loading {
+			
+			.qodef-m-action-button {
+				opacity: 0;
+			}
+			
+			.qodef-m-action-spinner {
+				opacity: 1;
+			}
+		}
+	}
+	
+	.qodef-m-action {
+		position: relative;
+		display: block;
+		vertical-align: top;
+	}
+	
+	.qodef-m-action-button {
+		opacity: 1;
+		z-index: 2;
+		width: 100%;
+		margin: 17px 0 11px;
+	}
+	
+	.qodef-m-action-spinner {
+		position: absolute;
+		top: calc(50% - 25px);
+		left: calc(50% - 15px);
+		font-size: 30px;
+		opacity: 0;
+	}
+	
+	.qodef-m-response {
+		line-height: 1;
+		font-size: 14px;
+		color: #e5dcdb;
+		background-color: #1f1917;
+		text-align: center;
+
+		&.qodef--success {
+			padding: 17px 35px 15px
+		}
+
+		&.qodef--error {
+			padding: 17px 35px 15px
+		}
+	}
+
+	.qodef-m-links-not-a-member-text, .qodef-m-links-not-a-member-text-link {
+		font-size: 14px;
+		margin: 0;
+	}
+
+	.qodef-m-links-not-a-member-text, .qodef-m-links-register {
+		display: inline-block;
+		margin: 0;
+	}
+
+	.qodef-m-bottom {
+		margin: 0;
+		padding: 18px 35px;
+		background: url('../img/login-background-bottom.jpg') no-repeat 100% 88% #f9f6f1;
+		
+		@media screen and (max-width: 1366px) {
+			padding: 1px 35px 18px;
+		}
+
+		.qodef-m-social-login {
+			margin: 0 20px 20px 0;
+			display: inline-block;
+
+			button {
+				padding: 0;
+				height: 33px;
+				width: 33px;
+				font-size: 14px;
+				line-height: 33px;
+				background-color: transparent;
+				color: $main-color;
+				border: 1px solid rgba($heading-color, .1);
+				transition: all .25s ease;
+
+				&:hover {
+					border-color: $main-color;
+					background-color: $main-color;
+					color: #fff;
+				}
+			}
+		}
+	}
+
+	.qodef-m-links-register {
+
+		p {
+			font-size: 14px;
+			color: $main-color;
+
+			&:hover {
+				color: $main-color-hover;
+			}
+		}
+	}
+	
+	&.qodef--opened {
+		opacity: 1;
+		visibility: visible;
+
+		.qodef-membership-login-modal-content {
+			opacity: 1;
+			transform: translateY(0);
+			transition: .5s .1s;
+			visibility: visible;
+		}
+	}
+	
+	.page-template-user-dashboard & {
+		position: relative;
+		height: auto;
+		background-color: transparent;
+		opacity: 1;
+		visibility: visible;
+		
+		.qodef-membership-login-modal-content {
+			background-color: transparent;
+		}
+	}
+}
+
+.qodef-svg-close-cursor {
+    opacity: 0;
+    margin: -11px;
+    pointer-events: none;
+    position: fixed;
+    z-index: 8000;
+
+    svg {
+        line {
+            stroke-width: 1.4px;
+        }
+    }
+}

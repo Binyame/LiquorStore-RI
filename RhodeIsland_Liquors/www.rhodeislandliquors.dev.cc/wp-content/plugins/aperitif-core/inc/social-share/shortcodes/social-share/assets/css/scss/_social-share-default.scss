@@ -1,0 +1,72 @@
+/* ==========================================================================
+   Social Share shortcode styles
+   ========================================================================== */
+
+.qodef-social-share {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	
+	.qodef-social-title {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		margin: 0 5px 0 0;
+		@include qodefHeadingStyle(h6);
+	}
+	
+	ul {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	
+	li {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		line-height: 1;
+		padding: 0;
+		margin: 0;
+		
+		a {
+			font-size: 11px;
+			color: $main-color;
+			
+			&:hover {
+				color: $main-color-hover !important;
+			}
+		}
+		
+		&.qodef-facebook-share a:hover {
+			color: #3b5998;
+		}
+		
+		&.qodef-twitter-share a:hover {
+			color: #00aced;
+		}
+		
+		&.qodef-linkedin-share a:hover {
+			color: #007bb5;
+		}
+		
+		&.qodef-tumblr-share a:hover {
+			color: #32506d;
+		}
+		
+		&.qodef-pinterest-share a:hover {
+			color: #cb2027;
+		}
+		
+		&.qodef-vk-share a:hover {
+			color: #45668e;
+		}
+	}
+}
+
+/* ==========================================================================
+   Social Share shortcode styles
+   ========================================================================== */

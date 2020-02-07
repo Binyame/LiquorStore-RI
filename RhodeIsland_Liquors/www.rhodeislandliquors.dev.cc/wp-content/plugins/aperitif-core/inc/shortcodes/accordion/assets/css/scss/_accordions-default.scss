@@ -1,0 +1,16 @@
+/* ==========================================================================
+   Accordion shortcode styles
+   ========================================================================== */
+
+.qodef-accordion {
+	@include qodefRelativeLayout();
+	visibility: hidden;
+	
+	.qodef-accordion-content-inner {
+		@include qodefRelativeLayout();
+	}
+	
+	&.qodef--init {
+		visibility: visible;
+	}
+}

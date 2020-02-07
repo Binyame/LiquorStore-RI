@@ -1,0 +1,148 @@
+.qodef-header-navigation {
+	
+	ul {
+		
+		li {
+			
+			a {
+				
+				.qodef-menu-item-icon {
+					margin-right: 5px;
+					vertical-align: middle;
+				}
+			}
+			
+			.qodef-drop-down-second {
+				background-color: $box-background-color;
+                display: block;
+                position: absolute;
+                top: 100%;
+                left: -22px;
+                width: auto;
+                z-index: 10;
+                opacity: 0;
+                transition: .1s;
+                pointer-events: none;
+                transform: translateY(20px);
+
+				&.qodef-drop-down--start {
+                    opacity: 1;
+                    z-index: 20;
+                    transition: .3s;
+                    pointer-events: all;
+                    transform: translateY(0);
+                }
+			}
+			
+			&.qodef-menu-item--wide {
+				
+				.qodef-drop-down-second {
+					left: 0;
+					background-color: #fbf9f5;
+					background-position: center center;
+					
+					.qodef-drop-down-second--full-width:not(.qodef-header-padding) & {
+						width: 100vw;
+					}
+					
+					.qodef-drop-down-second-inner {
+						padding: 0;
+
+						> ul {
+							display: flex;
+							justify-content: space-around;
+							padding: 37px 0 40px;
+							margin: 0 !important;
+							
+							.qodef-header-padding &,
+							.qodef--boxed & {
+								padding: 37px 40px 40px;
+							}
+
+							> li {
+								flex: 1 1 25%;
+								padding: 0;
+
+								> a {
+
+									span {
+										color: $main-color !important;
+										font-style: italic;
+									}
+
+									&:before, &:after {
+										display: none;
+									}
+								}
+							}
+						}
+
+						ul {
+							margin-top: 13px;
+
+							li {
+								padding: 5px 0;
+
+								a {
+
+									span {
+										font-family: $text-font;
+										font-size: 15px;
+										line-height: 24px;
+										color: $text-color;
+										text-transform: capitalize;
+										letter-spacing: 0;
+									}
+									
+									&:before, &:after {
+										display: none;
+									}
+									
+									&:hover {
+										color: $main-color;
+										
+										span {
+											color: $main-color !important;
+										}
+									}
+								}
+								
+								&.current_page_item {
+									
+									> a {
+										
+										span {
+											color: $main-color !important;
+											font-style: italic;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			
+			&.qodef-menu-item--narrow {
+				
+				.qodef-drop-down-second {
+					
+					&.qodef-drop-down--right {
+						left: auto;
+						right: 0;
+					}
+				}
+				
+				.qodef-drop-down-second-inner {
+					@include qodefRelativeLayout();
+
+					> ul {
+						opacity: 1;
+						visibility: visible;
+						background-position: center center;
+					}
+				}
+			}
+		}
+	}
+}

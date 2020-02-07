@@ -1,0 +1,83 @@
+/* ==========================================================================
+   Events List shortcode styles
+   ========================================================================== */
+
+.qodef-events-list {
+	
+	.qodef-e-inner {
+		display: flex;
+		padding: 5%;
+		border: 7px solid #f5f4ee;
+		border-image: url("../img/blue-border.jpg") 30 round;
+		
+		@media screen and (max-width: 680px) {
+			flex-wrap: wrap;
+		}
+	}
+	
+	&.brown-border {
+		
+		.qodef-e-inner {
+			border-image: url("../img/brown-border.jpg") 30 round;
+		}
+	}
+	
+	.qodef-e-image {
+		flex-basis: 106px;
+		margin-right: 36px;
+		
+		a, img {
+			display: block;
+		}
+		
+		@media screen and (max-width: 680px) {
+			flex-basis: 100%;
+			margin: 0 0 20px;
+		}
+	}
+	
+	.qodef-e-content {
+		flex-grow: 1;
+		
+		@media screen and (max-width: 680px) {
+			flex-basis: 100%;
+		}
+	}
+	
+	.qodef-e-title {
+		margin: 0 0 8px 0;
+	}
+	
+	.qodef-e-meta {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	
+	.qodef-e-meta-item {
+		flex-shrink: 0;
+		margin-right: 13px;
+		
+		@media screen and (max-width: 680px) {
+			flex-shrink: 1;
+		}
+	}
+	
+	.qodef-e-meta-icon {
+		position: relative;
+		top: 3px;
+		font-size: 17px;
+		color: $main-color;
+	}
+	
+	.qodef-e-meta-value {
+		font-size: 14px;
+	}
+	
+	.qodef-e-button-holder {
+		margin-top: 13px;
+	}
+}
+
+/* ==========================================================================
+   Events List shortcode styles
+   ========================================================================== */

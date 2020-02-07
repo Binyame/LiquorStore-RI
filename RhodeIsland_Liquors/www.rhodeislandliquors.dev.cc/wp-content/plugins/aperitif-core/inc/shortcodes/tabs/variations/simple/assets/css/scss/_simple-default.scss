@@ -1,0 +1,72 @@
+.qodef-tabs.qodef-layout--simple {
+	
+	.qodef-tabs-navigation {
+		position: relative;
+		display: flex;
+		align-items: flex-start;
+		padding: 20px 0;
+		border-bottom: 1px solid $border-color;
+		
+		li {
+			margin: 0 26px 0 0;
+			padding: 0;
+			
+			a {
+				display: block;
+				padding: 0 3px 1px;
+				@include qodefHeadingStyle(h6, false);
+				color: $heading-color;
+				text-transform: uppercase;
+				letter-spacing: 0.08em;
+				transition: $color-transition, $background-color-transition;
+			}
+
+			&.ui-state-active a {
+				@include qodefButtonLinePseudos();
+			}
+		}
+	}
+	
+	&.qodef-orientation--vertical {
+		display: flex;
+		align-items: stretch;
+		justify-content: space-between;
+		height: 100%;
+
+		.qodef-tabs-navigation {
+			flex-shrink: 0;
+			display: block;
+			padding-right: 26px;
+			margin-right: 26px;
+			border-right: 1px solid $border-color;
+			
+			li {
+				width: 100%;
+				margin-bottom: 26px;
+				
+				&:last-child {
+					margin-bottom: 0;
+				}
+				
+				a {
+					display: inline-block;
+					width: auto;
+				}
+
+				&.ui-state-active a {
+					&:before {
+						display: none;
+					}
+				}
+			}
+		}
+		
+		.qodef-tabs-content {
+			margin-top: 0;
+		}
+	}
+	
+	.qodef-tabs-content {
+		margin: 32px 0 0;
+	}
+}

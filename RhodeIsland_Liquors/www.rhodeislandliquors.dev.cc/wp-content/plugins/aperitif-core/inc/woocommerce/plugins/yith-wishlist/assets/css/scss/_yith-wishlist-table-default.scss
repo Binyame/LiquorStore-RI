@@ -1,0 +1,137 @@
+/* ==========================================================================
+   YITH Wish List table default styles
+   ========================================================================== */
+
+#yith-wcwl-popup-message {
+	display: none !important;
+}
+
+#yith-wcwl-form {
+	.wishlist-title {
+		display: none;
+	}
+
+	.shop_table {
+		font-size: initial;
+		
+		tfoot {
+			display: none;
+		}
+
+		th, td {
+			padding: 15px 0 15px 15px;
+			text-align: left;
+			vertical-align: middle;
+			
+			@media screen and (max-width: 680px) {
+				padding: 15px 0 15px 5px;
+			}
+
+			&:first-child {
+				padding-left: 0;
+			}
+			
+			&.product-stock-status {
+				@media screen and (max-width: 1024px) {
+					display: none;
+				}
+			}
+			
+			&.product-price,
+			&.product-thumbnail {
+				@media screen and (max-width: 680px) {
+					display: none;
+				}
+			}
+		}
+
+		th {
+			border: none;
+			@include qodefWooLabelsHeadingStyle();
+			line-height: 1;
+			
+			&.product-add-to-cart {
+				min-width: 180px;
+				
+				@media screen and (max-width: 680px) {
+					min-width: 150px;
+				}
+			}
+		}
+
+		td {
+			&.product-remove {
+				width: 30px;
+
+				a {
+					font-size: 20px;
+				}
+			}
+
+			&.product-thumbnail {
+				padding-right: 10px;
+				width: 72px;
+
+				a, img {
+					display: block;
+					width: 100%;
+				}
+			}
+
+			&.product-name {
+				line-height: 20px;
+				text-align: left;
+
+				a {
+					@include qodefWooLabelsHeadingStyle(false);
+					line-height: 20px;
+				}
+			}
+			
+			&.product-subtotal {
+				@include qodefWooPriceStyle();
+
+				display: table-cell;
+			}
+
+			&.product-add-to-cart {
+				min-width: 180px;
+				
+				@media screen and (max-width: 680px) {
+					min-width: 150px;
+				}
+				
+				a {
+					@include qodefWooButtonsStyle();
+					display: inline-block !important;
+					padding: 8px 34px;
+					
+					@media screen and (max-width: 680px) {
+						padding: 8px 8px;
+						font-size: 13px;
+					}
+
+					&.remove_from_wishlist {
+						margin-top: 6px;
+					}
+				}
+			}
+		}
+
+		.yith-wcwl-share {
+			display: none;
+		}
+
+		.qodef-social-share {
+
+			display: flex;
+			margin: 23px 0 9px 0;
+
+			.qodef-social-title {
+				margin-right: 13px;
+
+				@include qodefWooLabelsHeadingStyle();
+			}
+		}
+	}
+}

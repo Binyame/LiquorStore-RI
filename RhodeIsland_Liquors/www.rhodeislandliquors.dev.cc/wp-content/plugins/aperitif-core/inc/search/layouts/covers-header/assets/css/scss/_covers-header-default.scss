@@ -1,0 +1,167 @@
+/* ==========================================================================
+# Search covers header - start
+========================================================================== */
+
+@keyframes cover_search_fade_out {
+	0% {
+		opacity: 1;
+		visibility: visible;
+		z-index: 100;
+	}
+	100% {
+		opacity: 0;
+		visibility: hidden;
+		z-index: 0;
+	}
+}
+
+@keyframes cover_search_fade_in {
+	0% {
+		opacity: 0;
+		clip-path: inset(0 100% 0 0);
+		-webkit-clip-path: inset(0 100% 0 0);
+		visibility: hidden;
+		z-index: 100;
+	}
+	100% {
+		opacity: 1;
+		clip-path: inset(0 0 0 0);
+		-webkit-clip-path: inset(0 0 0 0);
+		visibility: visible;
+		z-index: 100;
+	}
+}
+
+.qodef-search-cover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+	opacity: 0;
+	z-index: -1;
+	transition: opacity 0.3s ease;
+	background: url('../img/cart-background.jpg') repeat center center #fff;
+	background-size: cover;
+
+	.qodef-covers-search--fadeout & {
+		animation: cover_search_fade_out .3s ease both;
+	}
+
+	.qodef-covers-search--fadein & {
+		animation: cover_search_fade_in .5s ease both;
+	}
+
+	.qodef-header--sticky-display #qodef-page-header > & {
+		display: none;
+	}
+
+	.qodef-form-holder {
+		display: flex;
+		height: 100%;
+		width: 100%;
+		max-width: 1400px;
+		align-items: center;
+		position: relative;
+		margin: 0 auto;
+		
+		@include qodefScreenSize1440 {
+			max-width: 1100px;
+		}
+	}
+
+	input[type="text"] {
+		display: inline-block;
+		vertical-align: middle;
+		float: left;
+		width: 100%;
+		padding: 0;
+		margin: 0;
+		font-family: $text-font;
+		font-size: 17px;
+		color: $text-color;;
+		background-color: transparent;
+		border: 0;
+		border-radius: 0;
+		box-shadow: none;
+		outline: none;
+		outline-offset: 0;
+
+		&:focus {
+			color: $main-color;
+		}
+
+		@include qodefPlaceholder {
+			color: inherit;
+		}
+	}
+
+	input[type="submit"] {
+		position: absolute;
+		height: 1px;
+		width: 1px;
+		padding: 0;
+		margin: -1px;
+		border: 0 none;
+		clip: rect(0px, 0px, 0px, 0px);
+		visibility: hidden;
+	}
+
+	.qodef-search-close {
+		position: absolute;
+		top: 50%;
+		right: 0;
+		display: inline-block;
+		vertical-align: middle;
+		transform: translateY(-50%);
+		color: #393632;
+
+		&:hover {
+			color: initial;
+		}
+
+		&.qodef-search-close--icon-pack {
+			font-size: 33px;
+			line-height: 1em;
+
+			* {
+				display: block;
+				line-height: inherit;
+
+				&:before {
+					display: block;
+					line-height: inherit;
+				}
+			}
+		}
+
+		&.qodef-search-close--svg-path {
+
+			&:hover {
+
+				line:nth-child(1) {
+					animation: 1s qodef-animate-close-svg-line forwards;
+				}
+	
+				line:nth-child(2) {
+					animation: 1s .3s qodef-animate-close-svg-line forwards;
+				}
+			}
+
+			> * {
+				vertical-align: middle;
+			}
+
+			> *,
+			path {
+				fill: currentColor;
+				stroke: currentColor;
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+# Search covers header - end
+========================================================================== */

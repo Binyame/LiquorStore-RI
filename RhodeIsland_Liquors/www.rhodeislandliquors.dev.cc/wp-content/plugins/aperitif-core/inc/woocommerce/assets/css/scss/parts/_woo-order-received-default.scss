@@ -1,0 +1,29 @@
+/* ==========================================================================
+   WooCommerce order received styles
+   ========================================================================== */
+
+.woocommerce-order-received {
+
+	.woocommerce-order {
+		
+		.woocommerce-thankyou-order-received {
+			@include qodefWooTemplatesHeadingStyle(0 0 20px);
+		}
+		
+		.woocommerce-order-overview {
+			@include qodefWooTemplatesListStyles();
+		}
+		
+		.woocommerce-order-details {
+			margin-top: 40px;
+		}
+		
+		h2 {
+			@include qodefWooTemplatesHeadingStyle(0 0 20px);
+		}
+		
+		.woocommerce-customer-details {
+			margin-top: 50px;
+		}
+	}
+}

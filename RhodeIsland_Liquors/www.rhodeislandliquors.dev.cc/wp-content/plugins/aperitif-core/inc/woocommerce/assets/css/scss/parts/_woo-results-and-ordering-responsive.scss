@@ -1,0 +1,17 @@
+/* ==========================================================================
+   WooCommerce results and ordering styles
+   ========================================================================== */
+
+.qodef-woo-results {
+	
+	@include qodefScreenSize680 {
+
+		.woocommerce-result-count {
+			width: 100%;
+		}
+
+		.woocommerce-ordering {
+			width: 100%;
+		}
+	}
+}

@@ -1,0 +1,339 @@
+/* ==========================================================================
+YITH Quick View Content default styles
+========================================================================== */
+
+body {
+	#yith-quick-view-modal {
+		[id*="product"] {
+			align-items: flex-start;
+			display: flex;
+			position: relative;
+		}
+
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		// left side stuff
+
+		.qodef-woo-single-image {
+			@include qodefRelativeLayout();
+			width: 50%;
+
+			figure {
+				display: flex;
+				flex-wrap: wrap;
+				margin: 0;
+
+				a, img {
+					background-color: #ccc;
+					display: block;
+					width: 100%;
+				}
+			}
+
+			.qodef-woo-product-mark {
+				position: absolute;
+				top: 27px;
+				right: 27px;
+				font-size: 15px;
+				line-height: 1;
+				letter-spacing: .08em;
+				font-family: $heading-font;
+				color: $main-color;
+				z-index: 5;
+			}
+
+			.woocommerce-product-gallery__trigger {
+				height: 16px;
+				left: 10px;
+				line-height: 30px;
+				position: absolute;
+				text-align: center;
+				top: 10px;
+				width: 16px;
+				z-index: 5;
+
+				img {
+					display: none !important;
+				}
+			}
+
+			.zoomImg {
+				cursor: crosshair;
+			}
+		}
+
+		.woocommerce-product-gallery {
+			display: inline-block;
+			position: relative;
+			vertical-align: top;
+			width: 100% !important;
+		}
+
+		.woocommerce-product-gallery__image {
+			flex-shrink: 0;
+			overflow: hidden;
+			padding: 0;
+			position: relative;
+			width: 100% !important;
+		}
+
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		// right side stuff
+
+		.summary {
+			@include qodefRelativeLayout();
+			display: inline-block;
+			margin-left: 40px !important;
+			padding: 0 !important;
+			position: relative;
+			vertical-align: top;
+			width: 50% !important;
+			float: none !important;
+		}
+
+		.qodef-woo-product-title {
+			letter-spacing: .14em;
+			margin: -7px 0 0;
+		}
+
+		.woocommerce-product-rating {
+			position: relative;
+			display: flex;
+			align-items: center;
+			margin-top: 12px;
+
+			.qodef-woo-ratings {
+				flex-shrink: 0;
+				width: auto;
+				margin-right: 5px;
+				line-height: 25px;
+			}
+		}
+
+		.qodef-woo-ratings {
+			@include qodefWooRatingsStyle(false);
+		}
+
+		.price {
+			@include qodefWooPriceStyle();
+			font-size: 25px;
+			margin-top: 17px;
+		}
+
+		.woocommerce-product-details__short-description {
+			margin-top: 35px;
+
+			p {
+				margin-top: 0;
+
+				&:not(:first-child) {
+					display: none;
+				}
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		.qodef-quantity-buttons {
+			position: relative;
+			display: inline-block;
+			vertical-align: middle;
+
+			.qodef-quantity-input,
+			.qodef-quantity-minus,
+			.qodef-quantity-plus {
+				display: inline-block;
+				vertical-align: middle;
+				text-align: center;
+				user-select: none;
+				box-sizing: border-box;
+			}
+
+			.qodef-quantity-input {
+				position: relative;
+				height: 55px;
+				line-height: 55px;
+				min-width: 86px;
+				padding: 3% 0 0;
+				margin: 0;
+				outline: 0;
+				border: 1px solid #dfdede;
+				font-size: 17px;
+				color: $text-color;
+				z-index: 3;
+				
+				.qodef-browser--ms-explorer & {
+					padding: 0;
+				}
+			}
+
+			.qodef-quantity-minus,
+			.qodef-quantity-plus {
+				position: absolute;
+				top: 50%;
+				right: 0;
+				width: 25px;
+				height: 25px;
+				line-height: 23px;
+				cursor: pointer;
+				transition: color .15s ease-in-out;
+				z-index: 5;
+				font-size: 23px;
+
+				&:before {
+					display: block;
+					line-height: 25px;
+				}
+
+				&:hover {
+					color: $main-color;
+				}
+			}
+
+			.qodef-quantity-plus {
+				text-align: left;
+				transform: translate(-10px, -50%);
+			}
+
+			.qodef-quantity-minus {
+				text-align: right;
+				transform: translate(-50px, -50%);
+			}
+		}
+
+		.qodef-quantity-buttons {
+			margin: 0 8px 0 0;
+			border: 1px solid #dfdede;
+			padding-left: 93px;
+
+			@media screen and (max-width: 600px) {
+				margin: 0 12px 28px 0;
+			}
+
+			.qodef-quantity-input {
+				border: 0;
+			}
+
+			&:before {
+				content: 'Quantity:';
+				display: block;
+				position: absolute;
+				left: 20px;
+				top: 50%;
+				transform: translateY(-50%);
+				color: #999;
+				font-size: 17px;
+			}
+		}
+
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		// form
+
+		form.cart {
+			@include qodefRelativeLayout();
+			margin-top: 52px;
+
+			a.button,
+			button {
+				line-height: 55px;
+				padding: 0 60px;
+
+				@include qodefScreenSize1024 {
+					padding: 0;
+					display: flex;
+					flex-grow: 1;
+					justify-content: center;
+					text-align: center;
+				}
+			}
+
+			&:not(.variations_form),
+			.variations_button {
+				display: flex;
+				align-items: flex-start;
+				flex-wrap: wrap;
+
+				.quantity {
+					margin-right: 15px;
+					margin-bottom: 15px;
+				}
+			}
+
+			&.grouped_form {
+				flex-wrap: wrap;
+
+				.group_table {
+
+					th, td {
+						padding: 20px 0;
+						vertical-align: middle;
+						text-align: left;
+					}
+
+					label {
+						margin-bottom: 0;
+						@include qodefWooLabelsHeadingStyle();
+					}
+				}
+
+				> .button {
+					margin-top: 30px;
+				}
+			}
+
+			.variations {
+				margin-bottom: 30px;
+
+				tr {
+					border-bottom: 0;
+				}
+
+				td, th {
+					padding: 0;
+					text-align: initial;
+					vertical-align: middle;
+				}
+
+				label {
+					margin-bottom: 0;
+					@include qodefWooLabelsHeadingStyle();
+				}
+
+				select {
+					@include qodefWooSelect2Style();
+				}
+
+				.select2-container--default {
+					margin: 0;
+				}
+
+				.reset_variations {
+					display: inline-block;
+					vertical-align: top;
+					margin: 13px 0 0 15px;
+				}
+			}
+
+			.single_variation {
+				position: relative;
+				display: flex;
+				align-items: center;
+				margin-bottom: 30px;
+
+				.price {
+					margin: 0;
+				}
+			}
+		}
+
+		.out-of-stock {
+			@include qodefWooLabelsHeadingStyle();
+			margin: 28px 0 0;
+		}
+	}
+}
+
+/* ==========================================================================
+   YITH Quick View  styles - end
+   ========================================================================== */

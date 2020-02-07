@@ -1,0 +1,135 @@
+/* ==========================================================================
+   Login opener global styles
+   ========================================================================== */
+
+#qodef-page-header .widget.widget_aperitif_membership_login_opener {
+	height: 100%;
+	
+	.page-template-user-dashboard:not(.logged-in) & {
+		display: none;
+	}
+}
+
+.qodef-login-opener-widget {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	margin: 0;
+	
+	.qodef-login-opener {
+		position: relative;
+		display: block;
+		margin: 0 15px;
+		
+		.qodef-login-opener-text {
+			margin-right: 2px;
+		}
+
+		.qodef-login-icon {
+			font-size: 14px;
+			transform: translateY(2px);
+			display: inline-block;
+		}
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+	
+	.qodef-logged-in-user {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		height: 100%;
+		cursor: pointer;
+		
+		.qodef-m-user {
+			position: relative;
+			display: flex;
+			align-items: center;
+			height: 100%;
+		}
+
+		.qodef-m-user-name {
+
+			.qodef-header--standard header & {
+				display: none;
+			}
+		}
+		
+		.qodef-m-user-image {
+			flex-shrink: 0;
+			margin-right: 5px;
+
+			img {
+				border-radius: 50%;
+				margin-left: 7px;
+			}
+
+			.qodef-header--standard header & {
+				margin: 0 auto;
+
+				img {
+					margin: 0;
+				}
+			}
+		}
+		
+		.qodef-m-navigation-items {
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translate(-50%, 100%);
+			min-width: 195px;
+			background-color: #1f1917;
+			visibility: hidden;
+			opacity: 0;
+			transition: $opacity-transition;
+			width: 100%;
+			padding: 20px !important;
+			
+			display: none;
+		}
+		
+		.qodef-m-navigation-item {
+			margin: 4px 0;
+			
+			.qodef-e-link {
+				position: relative;
+				display: flex;
+				align-items: flex-start;
+				color: #fff !important;
+
+				&:hover {
+					color: $main-color !important;
+				}
+			}
+			
+			.qodef-e-icon {
+				flex-shrink: 0;
+				margin-right: 5px;
+			}
+			
+			&.qodef--active {
+				
+				.qodef-e-link {
+				
+				}
+			}
+		}
+		
+		&:hover {
+			
+			.qodef-m-navigation-items {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+}

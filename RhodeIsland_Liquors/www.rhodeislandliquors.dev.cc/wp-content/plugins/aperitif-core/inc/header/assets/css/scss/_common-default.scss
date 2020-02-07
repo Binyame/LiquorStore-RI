@@ -1,0 +1,205 @@
+#qodef-page-header-inner {
+	
+	.qodef-custom-wishlist {
+		margin: -1px 0 0 !important;
+		display: flex !important;
+		justify-content: center;
+		align-items: center;
+		height: 58px;
+		
+		a {
+			width: 56px;
+			height: 58px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			transition: none !important;
+		}
+	}
+	
+	.widget {
+		display: inline-block;
+	}
+	
+	.qodef-header-navigation ul > li > a {
+		
+		.qodef-header--light & {
+			color: #fff;
+		}
+		
+		.qodef-header--dark & {
+			color: #000;
+		}
+	}
+	
+	.qodef-widget-holder {
+		display: flex;
+		align-items: center;
+		height: 100%;
+		@include qodefTransition(all 0.3s ease-in-out);
+		
+	}
+	
+}
+
+#qodef-page-header-inner {
+	
+	&.qodef-content-grid {
+		padding: 0;
+	}
+	
+}
+
+.qodef-header--divided,
+.qodef-header--centered,
+.qodef-header--standard {
+	
+	#qodef-page-header-inner {
+		
+		.widget {
+			min-width: 58px;
+			max-height: 58px;
+			padding: 0;
+			line-height: 58px;
+			text-align: center;
+			border: 1px solid #000;
+			margin: 0 -1px 0 0;
+			
+			a {
+				color: #000;
+			}
+		}
+	}
+	
+}
+
+.qodef-header--divided,
+.qodef-header--centered,
+.qodef-header--standard {
+	
+	#qodef-page-header {
+		
+		> div:not(.qodef-header-sticky) {
+			
+			.widget {
+				@include qodefTransition(all .2s ease-out);
+				border: 1px solid #000;
+				
+				a {
+					color: #000;
+				}
+				
+				&:hover {
+					background: $main-color;
+					border: 1px solid $main-color;
+					color: #fff;
+					
+					a {
+						color: #fff;
+					}
+					
+					.qodef-lines {
+						.qodef-line {
+							background-color: #fff;
+						}
+					}
+					
+					.qodef-m-opener-count {
+						background-color: #fff !important;
+						color: $main-color !important;
+					}
+				}
+			}
+		}
+	}
+}
+
+.qodef-header--divided,
+.qodef-header--centered,
+.qodef-header--standard {
+	
+	&.qodef-header--light {
+		
+		#qodef-page-header {
+			
+			> div:not(.qodef-header-sticky) {
+				
+				.widget {
+					@include qodefTransition(all .2s ease-out);
+					border: 1px solid #fff;
+					
+					a {
+						color: #fff;
+					}
+					
+					&:hover {
+						background: #fff;
+						color: $main-color;
+						border: 1px solid #fff;
+						
+						a {
+							color: $main-color;
+						}
+						
+						.qodef-lines {
+							.qodef-line {
+								background-color: $main-color;
+							}
+						}
+						
+						.qodef-m-opener-count {
+							background-color: $main-color !important;
+							color: #fff !important;
+						}
+					}
+				}
+			}
+		}
+		
+	}
+}
+
+.qodef-header--divided,
+.qodef-header--centered,
+.qodef-header--standard {
+	
+	&.qodef-header--dark {
+		
+		#qodef-page-header {
+			
+			> div:not(.qodef-header-sticky) {
+				
+				.widget {
+					@include qodefTransition(all .2s ease-out);
+					border: 1px solid #000;
+					
+					a {
+						color: #000;
+					}
+					
+					&:hover {
+						background: $main-color;
+						border: 1px solid $main-color;
+						color: #fff;
+						
+						a {
+							color: #fff;
+						}
+						
+						.qodef-lines {
+							.qodef-line {
+								background-color: #fff;
+							}
+						}
+						
+						.qodef-m-opener-count {
+							background-color: #fff !important;
+							color: $main-color !important;
+						}
+					}
+				}
+			}
+		}
+		
+	}
+}

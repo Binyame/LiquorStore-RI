@@ -1,0 +1,59 @@
+/* ==========================================================================
+# Search opener - begin
+========================================================================== */
+
+.qodef-search-opener {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 23px;
+	line-height: 0;
+	width: 56px;
+    height: 58px;
+    display: flex;
+    justify-content: center;
+	align-items: center;
+	margin: 0 !important;
+
+	.qodef-search-opener-inner {
+		display: block;
+
+		svg {
+			circle, rect, line {
+				stroke: currentColor;
+			}
+		}
+
+		> * {
+			position: relative;
+			display: inline-block;
+			vertical-align: middle;
+			line-height: inherit;
+
+			&:before {
+				display: block;
+				line-height: inherit;
+			}
+		}
+	}
+
+	&.qodef-search-opener-svg-path {
+
+		.qodef-search-opener-wrapper {
+
+			> * {
+				vertical-align: middle;
+			}
+
+			> *,
+			path {
+				fill: currentColor;
+				stroke: currentColor;
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+# Search opener - end
+========================================================================== */

@@ -1,0 +1,127 @@
+/* ==========================================================================
+   Blog List styles
+   ========================================================================== */
+
+.qodef-blog {
+	
+	&.qodef-item-layout--simple {
+		
+		&.qodef-item-skin--light {
+			article {
+				* {
+					color: #fff;
+				}
+				
+				.qodef-info--top {
+					span, a {
+						color: #fff;
+					}
+				}
+				
+				.qodef-e-excerpt {
+					color: #e5dcdb;
+				}
+				
+				.qodef-button {
+					
+					&.qodef-layout--textual {
+						&:after {
+							background-color: #fff;
+						}
+						
+						&:before {
+							background-color: #fff;
+						}
+					}
+				}
+			}
+		}
+		
+		article {
+			&.has-post-thumbnail {
+				.qodef-e-media {
+					margin-bottom: 29px;
+					
+					a {
+						@include qodefImageOverlayHoverStyle();
+					}
+				}
+			}
+			
+			.qodef-e-info {
+				&.qodef-info--top {
+					margin-bottom: 3px;
+				}
+			}
+			
+			.qodef-e-info {
+				&.qodef-info--bottom {
+					margin-top: 2px;
+				}
+			}
+			
+			.qodef-e-excerpt {
+				margin: 13px 0 3px;
+			}
+		}
+		
+		
+		&.qodef-col-num--1 {
+			
+			article:not(:last-child) {
+				
+				.qodef-e-info {
+					
+					&.qodef-info--bottom {
+						margin-bottom: 40px;
+					}
+				}
+				
+				&.format-link {
+					
+					.qodef-e-link {
+						margin-bottom: 50px;
+					}
+				}
+				
+				&.format-quote {
+					
+					.qodef-e-quote {
+						margin-bottom: 50px;
+					}
+				}
+			}
+		}
+		
+		&:not([class*="qodef-col-num--1"]) {
+			
+			article {
+				
+				&.format-link {
+					
+					.qodef-e-link {
+						padding: 76px;
+					}
+					
+					.qodef-icon-elegant-icons {
+						right: 40px;
+						font-size: 140px;
+					}
+				}
+				
+				&.format-quote {
+					
+					.qodef-e-quote {
+						padding: 76px;
+						
+						&:before {
+							right: 40px;
+							height: 196px;
+							font-size: 540px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

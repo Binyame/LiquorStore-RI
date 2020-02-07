@@ -1,0 +1,57 @@
+/* ==========================================================================
+   YITH Quick View Modal default styles
+   ========================================================================== */
+
+body {
+	#yith-quick-view-modal {
+
+		.yith-quick-view-overlay {
+			background-color: rgba($heading-color, .3);
+			cursor: none;
+		}
+
+		.yith-wcqv-wrapper {
+			height: auto !important;
+			max-width: 90%;
+			padding: 0;
+		}
+
+		.yith-wcqv-main {
+			@include qodefRelativeLayout();
+			background: #fff;
+			box-shadow: none;
+			overflow-y: visible !important;
+			padding: 40px;
+		}
+
+		#yith-quick-view-close {
+			background-position: center;
+			background-repeat: no-repeat;
+			border: none;
+			border-radius: 50%;
+			cursor: pointer;
+			display: block;
+			font-size: 0;
+			opacity: 1;
+			position: absolute;
+			right: 16px;
+			top: 13px;
+			z-index: 100;
+			color: $text-color;
+			visibility: hidden;
+
+			&:before {
+				font-family: "linea-arrows-10" !important;
+				text-transform: none !important;
+				content: "\e04a";
+				font-size: 30px;
+				display: block;
+
+			}
+
+			&:hover {
+				color: $main-color;
+			}
+		}
+	}
+}

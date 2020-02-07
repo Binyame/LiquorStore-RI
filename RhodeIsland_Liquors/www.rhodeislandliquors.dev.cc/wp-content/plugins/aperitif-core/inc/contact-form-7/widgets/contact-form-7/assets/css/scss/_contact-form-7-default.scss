@@ -1,0 +1,12 @@
+/* ==========================================================================
+   Contact Form 7 widget styles
+   ========================================================================== */
+
+.qodef-contact-form-7 {
+	@include qodefRelativeLayout();
+	
+	.ajax-loader {
+		position: absolute;
+		right: -10px;
+	}
+}

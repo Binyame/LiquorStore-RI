@@ -1,0 +1,28 @@
+/* ==========================================================================
+   Reservation Form responsive style - begin
+   ========================================================================== */
+@include qodefScreenSize1024 {
+	.qodef-reservation-form {
+		.qodef-holder--field {
+			flex-basis: 49%;
+			margin-bottom: 10px;
+		}
+	}
+	
+	.qodef-holder--label {
+		display: none;
+	}
+}
+
+@include qodefScreenSize680 {
+	.qodef-reservation-form {
+		.qodef-holder--field {
+			flex-basis: 100%;
+			margin-bottom: 10px;
+		}
+	}
+}
+
+/* ==========================================================================
+   Reservation Form responsive style - end
+   ========================================================================== */

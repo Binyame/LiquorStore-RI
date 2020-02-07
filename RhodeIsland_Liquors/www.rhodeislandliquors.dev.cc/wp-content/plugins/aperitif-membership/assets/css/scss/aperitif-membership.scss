@@ -1,0 +1,12 @@
+/* ==========================================================================
+   Include variables and mixins
+   ========================================================================== */
+@import '../../../../../themes/aperitif/assets/css/scss/variables';
+@import '../../../../../themes/aperitif/assets/css/scss/grid-variables';
+@import '../../../../../themes/aperitif/assets/css/scss/mixins';
+@import '../../../../../themes/aperitif/assets/css/scss/shortcodes-mixins';
+
+/* ========================================================================== */
+
+@import '../../../inc/**/assets/css/scss/**/*-default.scss';
+@import '../../../inc/**/assets/css/scss/**/*-responsive.scss';

@@ -1,0 +1,63 @@
+/* ==========================================================================
+   Working Hours List shortcode styles
+   ========================================================================== */
+
+.qodef-working-hours-list {
+	@include qodefRelativeLayout();
+	
+	.qodef-working-hours-item {
+		display: flex;
+		align-items: baseline;
+		margin-bottom: 18px;
+	}
+	
+	.qodef-e-day {
+		position: relative;
+		margin: 0;
+	}
+	
+	.qodef-e-day-icon {
+		position: absolute;
+		top: -2px;
+		right: -8px;
+		font-size: 8px;
+		color: $main-color;
+	}
+	
+	.qodef-e-line {
+		flex-grow: 1;
+		margin: 0 10px;
+		border-bottom: 1px solid #bfb8b6;
+		opacity: 0.5;
+	}
+	
+	.qodef-e-time {
+		margin: 0;
+		font-family: $text-font;
+		font-style: italic;
+		letter-spacing: 0;
+		
+		&.qodef--closed {
+			color: $main-color;
+		}
+	}
+	
+	.qodef-m-footer {
+		position: relative;
+		top: 3px;
+		font-size: 14px;
+		color: $text-color;
+	}
+	
+	.qodef-m-footer-icon {
+		position: relative;
+		top: -5px;
+		right: 0;
+		font-size: 8px;
+		color: $main-color;
+	}
+}
+
+/* ==========================================================================
+   Working Hours List shortcode styles
+   ========================================================================== */

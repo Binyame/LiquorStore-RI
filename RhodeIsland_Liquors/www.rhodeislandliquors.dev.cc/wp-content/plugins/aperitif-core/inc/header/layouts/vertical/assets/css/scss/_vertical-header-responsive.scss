@@ -1,0 +1,18 @@
+/* Vertical header style - start */
+
+@include qodefScreenSize1024 {
+
+	.qodef-header--vertical {
+		#qodef-page-header-inner {
+			display: none;
+		}
+
+		#qodef-page-outer,
+		footer {
+			padding-left: 0;
+		}
+	}
+}
+
+
+/* Vertical header style - end */

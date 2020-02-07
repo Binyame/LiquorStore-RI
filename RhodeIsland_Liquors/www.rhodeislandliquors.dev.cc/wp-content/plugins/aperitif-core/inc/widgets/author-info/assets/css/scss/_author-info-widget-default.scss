@@ -1,0 +1,72 @@
+.widget.qodef-author-info {
+	
+	padding: 30px 30px 49px;
+	background-color: #fff;
+	
+	.qodef-author-info-image {
+		margin-bottom: 21px;
+		display: block;
+		
+		img {
+			width: 100%;
+		}
+	}
+	
+	.qodef-author-info-name {
+		margin: 35px 0 2px;
+		font-family: $heading-font;
+		color: $heading-color;
+		
+		a {
+			font-family: $heading-font;
+			color: $heading-color;
+		}
+		
+	}
+	
+	.qodef-author-info-description {
+		margin: 0;
+	}
+	
+	.qodef-m-position,
+	.qodef-m-country,
+	.qodef-m-dob {
+		display: block;
+		color: $main-color;
+		font-family: $text-font;
+		font-style: italic;
+		font-size: 15px;
+		position: relative;
+		margin: 0 5px 13px 0;
+	}
+	
+	.qodef-m-social-icons {
+		margin-top: 22px;
+		
+		a {
+			position: relative;
+			display: inline-block;
+			vertical-align: top;
+			margin-right: 6px;
+			color: $main-color;
+			padding: 4px 10px;
+			border: 1px solid #e9e9e9;
+			font-size: 14px;
+			@include qodefTransition(all 0.3s ease-in-out);
+			
+			&:last-child {
+				margin-right: 0;
+			}
+			
+			&:hover {
+				border: 1px solid $main-color;
+				background-color: $main-color;
+				color: #fff;
+			}
+		}
+	}
+}
+
+.widget_aperitif_core_author_info {
+	@include qodefBlueBorder();
+}

@@ -1,0 +1,153 @@
+/* ==========================================================================
+   Tribe Events Bar styles - start
+   ========================================================================== */
+
+#tribe-events-bar {
+	margin-bottom: 76px;
+	
+	.qodef-tribe-events-bar {
+		
+		#tribe-bar-form {
+			display: flex;
+			flex-direction: row-reverse;
+			background: none;
+			
+			@include qodefScreenSize768() {
+				flex-wrap: wrap;
+				flex-direction: column-reverse;
+			}
+		}
+		
+		#tribe-bar-views {
+			flex-basis: 25%;
+			padding-right: 3.6%;
+			margin-top: 0 !important;
+			
+			@include qodefScreenSize768() {
+				flex-basis: 100%;
+				padding: 0 0 40px !important;
+			}
+		}
+		
+		.tribe-bar-views-inner {
+			background: none;
+			padding: 0;
+		}
+		
+		#tribe-bar-views-toggle {
+			background: #fbf9f5;
+			padding: 22px 24px;
+			font-size: 14px;
+			color: #afa8a7;
+		}
+		
+		#tribe-bar-views-toggle:after {
+			content: "\e019";
+			font-family: "linea-arrows-10" !important;
+			font-size: 15px;
+			right: 38px;
+			top: 21px;
+			border: none;
+		}
+		
+		#tribe-bar-views-toggle:focus {
+			outline: 0;
+		}
+		
+		#tribe-bar-views-toggle > span {
+			display: none;
+		}
+		
+		/* dropdown view */
+		
+		.tribe-bar-views-list {
+			background: #fbf9f5;
+			z-index: 50;
+			padding: 20px 0;
+		}
+		
+		.tribe-bar-views-option {
+			background: #fbf9f5;
+			padding: 10px 24px;
+			font-size: 14px;
+			color: #afa8a7;
+		}
+		
+		.tribe-bar-views-option > span {
+			display: none;
+		}
+		
+		.qodef-tribe-events-bar-filter-label,
+		#tribe-bar-views-label {
+			margin: 0 0 21px;
+			font-size: 18px !important;
+		}
+		
+		#tribe-bar-form input[type=text] {
+			border: 1px solid #e6e6e6;
+			padding: 16px 20px;
+			font-style: normal;
+			color: #afa8a7;
+			font-size: 14px;
+			line-height: initial;
+		}
+		
+		#tribe-bar-form input[type=text]:focus {
+			outline: 0;
+		}
+		
+		#tribe-bar-form input[type=text]::placeholder {
+			font-style: normal;
+		}
+		
+		/* */
+		
+		.tribe-bar-filters-inner {
+			display: flex;
+			align-items: flex-end;
+			
+			@include qodefScreenSize768() {
+				flex-wrap: wrap;
+			}
+		}
+		
+		.tribe-bar-date-filter,
+		.tribe-bar-search-filter {
+			flex-basis: 38%;
+			padding: 0 16px 0 0;
+			
+			@include qodefScreenSize768() {
+				flex-basis: 100%;
+				padding: 0 0 40px !important;
+			}
+		}
+		
+		.tribe-bar-submit {
+			flex-basis: 24%;
+			margin: 0;
+			padding: 0;
+			
+			@include qodefScreenSize768() {
+				flex-basis: 100%;
+			}
+		}
+		
+		input[type=submit] {
+			padding: 0 !important;
+			margin: 0 !important;
+			line-height: 57px !important;
+			background: $main-color !important;
+			font-weight: 400 !important;
+			font-size: 15px !important;
+			letter-spacing: .13em !important;
+			
+			&:hover {
+				background: $main-button-hover !important;
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Tribe Events Bar styles - end
+   ========================================================================== */

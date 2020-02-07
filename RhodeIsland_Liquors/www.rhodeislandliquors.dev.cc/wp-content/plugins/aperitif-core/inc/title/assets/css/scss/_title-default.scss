@@ -1,0 +1,105 @@
+/* ==========================================================================
+   Title styles
+   ========================================================================== */
+
+.qodef-page-title {
+	background-position: center 0;
+	background-repeat: no-repeat;
+	background-size: cover;
+	
+	&.qodef-image--responsive {
+		height: auto !important; // because of inline style
+		
+		.qodef-m-content {
+			position: absolute;
+			top: 0;
+			left: 0;
+			
+			&.qodef-content-grid {
+				left: 50%;
+				transform: translateX(-50%);
+			}
+		}
+	}
+	
+	&.qodef-disable-parallax-mobile {
+		
+		@include qodefScreenSize680 {
+			height: auto !important; // because of inline style
+			
+			.qodef-parallax-img-holder {
+				position: relative;
+				top: auto;
+				height: 100%;
+				left: auto;
+			}
+			
+			.qodef-parallax-img-wrapper {
+				position: relative;
+				transform: none !important;
+				top: auto;
+				left: auto;
+				height: 100%;
+				width: 100%;
+			}
+			
+			.qodef-parallax-img {
+				position: relative;
+				transform: none;
+				top: auto;
+				left: auto;
+				max-width: 100%;
+			}
+			
+			.qodef-m-content {
+				position: absolute;
+				top: 0;
+				left: 0;
+				
+				&.qodef-content-grid {
+					left: 50%;
+					transform: translateX(-50%);
+				}
+			}
+		}
+	}
+	
+	.qodef-m-image {
+		@include qodefRelativeLayout();
+		
+		img {
+			display: block;
+			width: 100%;
+		}
+	}
+	
+	.qodef-m-content {
+		
+		&.qodef-content-full-width {
+			padding: $full-width-side-padding;
+		}
+	}
+	
+	.qodef-breadcrumbs {
+		font-style: italic;
+		font-size: 15px;
+		color: $main-color;
+		
+		a, span {
+			font-size: 15px;
+			color: $main-color
+		}
+		
+		a:hover {
+			color: $main-color-hover;
+		}
+		
+		.qodef-breadcrumbs-separator {
+			margin: 0 4px;
+			
+			&:after {
+				content: '~';
+			}
+		}
+	}
+}

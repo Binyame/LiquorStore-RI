@@ -1,0 +1,17 @@
+#widgets-right .qodef-hide-dependency-holder {
+    display: none;
+}
+
+.widgets-php .qodef-image-uploader,
+.widgets-php .qodef-image-thumb {
+    display: block;
+}
+
+.widgets-php .qodef-image-uploader .button {
+    margin-right: 8px;
+    margin-top: 12px;
+}
+
+.widgets-php .qodef-image-uploader .button:last-child {
+    margin-right: 0;
+}

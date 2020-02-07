@@ -1,0 +1,387 @@
+# Copyright (C) 2019 Qode Themes
+# This file is distributed under the same license as the Aperitif Membership plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Aperitif Membership 1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/aperitif-membership\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2019-11-18T11:41:52+01:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.1.0\n"
+"X-Domain: aperitif-membership\n"
+
+#. Plugin Name of the plugin
+msgid "Aperitif Membership"
+msgstr ""
+
+#. Description of the plugin
+msgid "Plugin that adds login functionality and user dashboard page"
+msgstr ""
+
+#. Author of the plugin
+msgid "Qode Themes"
+msgstr ""
+
+#: aperitif-membership.php:110
+msgid "Aperitif Core plugin is required for Aperitif Membership plugin to work properly. Please install/activate it first."
+msgstr ""
+
+#: inc/general/helper.php:10
+msgid "Profile"
+msgstr ""
+
+#: inc/general/helper.php:16
+#: inc/general/page-templates/parts/edit-profile.php:11
+msgid "Edit Profile"
+msgstr ""
+
+#: inc/general/helper.php:22
+msgid "Log Out"
+msgstr ""
+
+#: inc/general/helper.php:70
+msgid "Post method is invalid."
+msgstr ""
+
+#: inc/general/helper.php:86
+#: inc/login-modal/register/helper.php:58
+msgid "Password and confirm password doesn't match."
+msgstr ""
+
+#: inc/general/helper.php:93
+#: inc/login-modal/register/helper.php:42
+msgid "Please provide a valid email address."
+msgstr ""
+
+#: inc/general/helper.php:98
+msgid "An account is already registered with this email address. Please fill another one."
+msgstr ""
+
+#: inc/general/helper.php:133
+msgid "Your profile is successfully updated."
+msgstr ""
+
+#: inc/general/helper.php:135
+msgid "Change your information in order to update your profile."
+msgstr ""
+
+#: inc/general/helper.php:138
+msgid "You are unauthorized to perform this action."
+msgstr ""
+
+#: inc/general/helper.php:141
+msgid "Data are invalid."
+msgstr ""
+
+#: inc/general/page-templates/parts/edit-profile.php:16
+msgid "Update Profile"
+msgstr ""
+
+#: inc/general/page-templates/parts/edit-profile.php:18
+msgid "Updating Profile"
+msgstr ""
+
+#: inc/general/page-templates/parts/edit-profile.php:19
+msgid "Profile Updated"
+msgstr ""
+
+#: inc/general/page-templates/parts/edit-profile.php:31
+msgid "First Name"
+msgstr ""
+
+#: inc/general/page-templates/parts/edit-profile.php:40
+msgid "Last Name"
+msgstr ""
+
+#: inc/general/page-templates/parts/edit-profile.php:49
+#: inc/login-modal/register/templates/register-form.php:7
+msgid "Email"
+msgstr ""
+
+#: inc/general/page-templates/parts/edit-profile.php:58
+msgid "Website"
+msgstr ""
+
+#: inc/general/page-templates/parts/edit-profile.php:67
+msgid "Description"
+msgstr ""
+
+#: inc/general/page-templates/parts/edit-profile.php:76
+#: inc/login-modal/login/templates/login-form.php:7
+#: inc/login-modal/register/templates/register-form.php:9
+msgid "Password"
+msgstr ""
+
+#: inc/general/page-templates/parts/edit-profile.php:84
+msgid "Repeat Password"
+msgstr ""
+
+#: inc/general/page-templates/parts/profile.php:9
+msgid "First Name:"
+msgstr ""
+
+#: inc/general/page-templates/parts/profile.php:15
+msgid "Last Name:"
+msgstr ""
+
+#: inc/general/page-templates/parts/profile.php:21
+msgid "Email:"
+msgstr ""
+
+#: inc/general/page-templates/parts/profile.php:27
+msgid "Website:"
+msgstr ""
+
+#: inc/general/page-templates/parts/profile.php:33
+msgid "Description:"
+msgstr ""
+
+#: inc/general/register-template.php:11
+msgid "User Dashboard"
+msgstr ""
+
+#: inc/login-modal/helper.php:65
+msgid "Options data is array with all necessary parameters for login functionality."
+msgstr ""
+
+#: inc/login-modal/helper.php:72
+msgid "Secret code to check if user is submitted the form."
+msgstr ""
+
+#: inc/login-modal/helper.php:90
+msgid "HTTP method is invalid."
+msgstr ""
+
+#: inc/login-modal/helper.php:129
+msgid "Something was wrong during the %s process."
+msgstr ""
+
+#: inc/login-modal/helper.php:132
+msgid "You are not authorized."
+msgstr ""
+
+#: inc/login-modal/helper.php:160
+msgid "You are successfully logged in. Please wait..."
+msgstr ""
+
+#: inc/login-modal/helper.php:163
+msgid "User credentials are invalid."
+msgstr ""
+
+#: inc/login-modal/login/helper.php:10
+#: inc/login-modal/login/templates/login-form.php:4
+#: inc/login-modal/login/templates/login-form.php:24
+#: inc/widgets/login-opener/templates/logged-out-content.php:2
+msgid "Login"
+msgstr ""
+
+#: inc/login-modal/login/helper.php:56
+msgid "Username or password is invalid."
+msgstr ""
+
+#: inc/login-modal/login/helper.php:60
+msgid "Login successful, redirecting..."
+msgstr ""
+
+#: inc/login-modal/login/helper.php:63
+#: inc/login-modal/register/helper.php:100
+#: inc/login-modal/reset-password/helper.php:59
+msgid "Options are invalid."
+msgstr ""
+
+#: inc/login-modal/login/templates/login-form.php:5
+#: inc/login-modal/register/templates/register-form.php:5
+msgid "Username"
+msgstr ""
+
+#: inc/login-modal/login/templates/login-form.php:13
+msgid "Remember me"
+msgstr ""
+
+#: inc/login-modal/login/templates/login-form.php:16
+msgid "Forgot your password?"
+msgstr ""
+
+#: inc/login-modal/login/templates/login-form.php:31
+msgid "Not a member yet?"
+msgstr ""
+
+#: inc/login-modal/login/templates/login-form.php:33
+msgid "Register Now"
+msgstr ""
+
+#: inc/login-modal/login/templates/login-form.php:39
+msgid "Connect With Social Networks!"
+msgstr ""
+
+#: inc/login-modal/register/helper.php:10
+#: inc/login-modal/register/templates/register-form.php:4
+#: inc/login-modal/register/templates/register-form.php:20
+#: inc/widgets/login-opener/templates/logged-out-content.php:6
+msgid "Register"
+msgstr ""
+
+#: inc/login-modal/register/helper.php:46
+msgid "An account is already registered with your email address. Please log in."
+msgstr ""
+
+#: inc/login-modal/register/helper.php:50
+msgid "Please enter a valid account username."
+msgstr ""
+
+#: inc/login-modal/register/helper.php:54
+msgid "Username already exists. Please choose another one."
+msgstr ""
+
+#: inc/login-modal/register/helper.php:65
+msgid "User with this details can't be created."
+msgstr ""
+
+#: inc/login-modal/register/helper.php:84
+msgid "User Registration"
+msgstr ""
+
+#: inc/login-modal/register/helper.php:85
+msgid "You have registered successfully on "
+msgstr ""
+
+#: inc/login-modal/register/helper.php:94
+msgid "You have registered successfully, please login with the created credentials."
+msgstr ""
+
+#: inc/login-modal/register/templates/register-form.php:11
+msgid "Confirm Password"
+msgstr ""
+
+#: inc/login-modal/reset-password/helper.php:10
+#: inc/login-modal/reset-password/templates/reset-password-form.php:4
+#: inc/login-modal/reset-password/templates/reset-password-form.php:13
+msgid "Reset Password"
+msgstr ""
+
+#: inc/login-modal/reset-password/helper.php:39
+#: inc/login-modal/reset-password/helper.php:56
+msgid "Please provide a valid user."
+msgstr ""
+
+#: inc/login-modal/reset-password/helper.php:54
+msgid "You have successfully reset a password, please check your email."
+msgstr ""
+
+#: inc/login-modal/reset-password/templates/reset-password-form.php:5
+msgid "Username or Email"
+msgstr ""
+
+#: inc/login-modal/reset-password/templates/reset-password-form.php:20
+msgid "You will receive a link to create a new password via email."
+msgstr ""
+
+#: inc/login-modal/social-login/dashboard/admin/social-login-options.php:16
+msgid "Social Login"
+msgstr ""
+
+#: inc/login-modal/social-login/dashboard/admin/social-login-options.php:17
+msgid "Global settings related to social login"
+msgstr ""
+
+#: inc/login-modal/social-login/dashboard/admin/social-login-options.php:26
+msgid "Enable Social Login"
+msgstr ""
+
+#: inc/login-modal/social-login/dashboard/admin/social-login-options.php:27
+msgid "Enabling this option will allow login from social networks of your choice"
+msgstr ""
+
+#: inc/login-modal/social-login/dashboard/admin/social-login-options.php:35
+msgid "Social Networks"
+msgstr ""
+
+#: inc/login-modal/social-login/facebook/dashboard/admin/facebook-options.php:14
+msgid "Enable Facebook Social Login"
+msgstr ""
+
+#: inc/login-modal/social-login/facebook/dashboard/admin/facebook-options.php:15
+msgid "Enabling this option will allow login from facebook social network. SSL must be set on site in order to this functionality work"
+msgstr ""
+
+#: inc/login-modal/social-login/facebook/dashboard/admin/facebook-options.php:24
+msgid "Facebook App ID"
+msgstr ""
+
+#: inc/login-modal/social-login/facebook/dashboard/admin/facebook-options.php:25
+msgid "Copy your application ID form created Facebook Application"
+msgstr ""
+
+#: inc/login-modal/social-login/facebook/helper.php:63
+#: inc/login-modal/social-login/google/helper.php:73
+msgid "Email address is invalid."
+msgstr ""
+
+#: inc/login-modal/social-login/google/dashboard/admin/google-options.php:14
+msgid "Enable Google Social Login"
+msgstr ""
+
+#: inc/login-modal/social-login/google/dashboard/admin/google-options.php:15
+msgid "Enabling this option will allow login from google social network"
+msgstr ""
+
+#: inc/login-modal/social-login/google/dashboard/admin/google-options.php:24
+msgid "Google App ID"
+msgstr ""
+
+#: inc/login-modal/social-login/google/dashboard/admin/google-options.php:25
+msgid "Copy your Client ID form created Google Application"
+msgstr ""
+
+#: inc/login-modal/social-login/twitter/dashboard/admin/twitter-options.php:14
+msgid "Enable Twitter Social Login"
+msgstr ""
+
+#: inc/login-modal/social-login/twitter/dashboard/admin/twitter-options.php:15
+msgid "Enabling this option will allow login from twitter social network"
+msgstr ""
+
+#: inc/login-modal/social-login/twitter/helper.php:31
+msgid "Please authorize your account..."
+msgstr ""
+
+#: inc/login-modal/social-login/twitter/helper.php:36
+msgid "Twitter API instance are invalid."
+msgstr ""
+
+#: inc/login-modal/social-login/twitter/twitter-api.php:236
+#: inc/login-modal/social-login/twitter/twitter-api.php:300
+msgid "Internal WP error"
+msgstr ""
+
+#: inc/login-modal/social-login/twitter/twitter-api.php:251
+msgid "Redirect URL could not be generated"
+msgstr ""
+
+#: inc/login-modal/social-login/twitter/twitter-api.php:257
+msgid "Couldn't connect with Twitter API"
+msgstr ""
+
+#: inc/widgets/login-opener/login-opener.php:25
+msgid "Aperitif Login Opener"
+msgstr ""
+
+#: inc/widgets/login-opener/login-opener.php:26
+msgid "Login and register membership widget"
+msgstr ""
+
+#: inc/widgets/login-opener/login-opener.php:31
+msgid "Opener Margin"
+msgstr ""
+
+#: inc/widgets/login-opener/login-opener.php:32
+msgid "Insert margin in format: top right bottom left"
+msgstr ""
+
+#: inc/widgets/login-opener/templates/logged-in-content.php:8
+msgid "Welcome"
+msgstr ""

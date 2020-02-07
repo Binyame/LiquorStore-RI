@@ -1,0 +1,84 @@
+.qodef-banner {
+	@include qodefRelativeLayout();
+	
+	.qodef-m-banner-link {
+		@include qodefAbsoluteLayout();
+		
+		display: block;
+		z-index: 1;
+	}
+	
+	.qodef-m-content {
+		@include qodefAbsoluteLayout();
+		
+		display: block;
+		
+		.qodef-m-content-inner {
+			@include qodefAbsoluteLayout();
+			
+			display: flex;
+			
+			.qodef-m-title {
+				margin: 10px 0 4px;
+			}
+			
+			.qodef-m-title-inner {
+				display: inline-block;
+			}
+			
+			.qodef-m-subtitle {
+				@import url('https://fonts.googleapis.com/css?family=Dawning+of+a+New+Day&display=swap');
+				font-family: 'Dawning of a New Day', cursive;
+				margin: 0;
+				opacity: .5;
+				letter-spacing: 0;
+			}
+			
+			.qodef-m-text-field {
+				font-size: 15px;
+				color: $main-color;
+				margin: 0 0 10px;
+				font-style: italic;
+			}
+		}
+	}
+	
+	.qodef-m-image {
+		@include qodefRelativeLayout();
+		overflow: hidden;
+		
+		img {
+			display: block;
+			transition: all .35s ease-out;
+		}
+	}
+	
+	.qodef-m-hover-image {
+		
+		img {
+			
+			&:nth-child(1) {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				opacity: 0;
+			}
+		}
+	}
+	
+	&:hover {
+		
+		.qodef-m-hover-image {
+			
+			img {
+				
+				&:nth-child(1) {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+

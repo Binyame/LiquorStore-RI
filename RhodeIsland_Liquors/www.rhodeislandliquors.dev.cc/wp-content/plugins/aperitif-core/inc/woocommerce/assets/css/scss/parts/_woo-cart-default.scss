@@ -1,0 +1,172 @@
+/* ==========================================================================
+   WooCommerce cart styles
+   ========================================================================== */
+
+#qodef-woo-page {
+	
+	&.qodef--cart {
+		
+		.shop_table {
+			
+			td {
+				
+				&.product-remove {
+					width: 30px;
+					
+					a {
+						font-size: 20px;
+					}
+				}
+				
+				&.product-thumbnail {
+					width: 72px;
+					padding-right: 10px;
+					
+					a, img {
+						display: block;
+						width: 100%;
+					}
+				}
+				
+				&.product-name {
+					text-align: left;
+					
+					a {
+						@include qodefWooLabelsHeadingStyle(false);
+					}
+					
+					@media screen and (max-width: 680px) {
+						line-height: 17px;
+						font-size: 12px;
+						
+						a {
+							line-height: 17px;
+							font-size: 12px
+						}
+					}
+				}
+				
+				&.product-quantity {
+					
+					input[type="number"] {
+						margin: 0;
+					}
+				}
+				
+				&.actions {
+					padding: 30px 0 0;
+					text-align: initial;
+					
+					.coupon {
+						position: relative;
+						display: flex;
+						align-items: flex-start;
+						flex-wrap: wrap;
+						//width: 70%;
+						float: left;
+						
+						@include qodefScreenSize768 {
+							flex-direction: column;
+						}
+						
+						> * {
+							margin-bottom: 0;
+						}
+						
+						input {
+							padding: 11px 16px;
+						}
+					}
+					
+					label {
+						display: none;
+					}
+					
+					input[type="text"] {
+						width: auto;
+						margin-right: 20px;
+						line-height: 34px;
+					}
+					
+					> .button {
+						float: right;
+					}
+				}
+			}
+			
+			&.cart {
+				
+				tbody {
+					
+					> tr {
+						
+						&:last-child {
+							border-bottom: 0;
+						}
+					}
+				}
+			}
+		}
+		
+		.cart-collaterals {
+			
+			.shop_table {
+				
+				th {
+					width: 20%;
+				}
+			}
+		}
+		
+		.cross-sells,
+		.cart_totals {
+			margin-top: 87px;
+			
+			> h2 {
+				@include qodefWooTemplatesHeadingStyle(0 0 42px);
+			}
+		}
+		
+		.shipping-calculator-form {
+			
+			select {
+				@include qodefWooSelect2Style(100%);
+			}
+		}
+		
+		.wc-proceed-to-checkout {
+			margin-top: 50px;
+			
+			a {
+				@media screen and (max-width: 680px) {
+					padding: 14px 20px;
+				}
+			}
+		}
+	}
+}
+
+// This is temporary solution, we already asked support to add additional hooks inside this template in order to modify it and to move this css inside #qodef-woo-page
+.woocommerce-page {
+	
+	div.woocommerce {
+		
+		> .cart-empty {
+			@include qodefWooTemplatesHeadingStyle();
+			padding-top: 11px;
+			margin: 0;
+			text-align: center;
+			border: 0;
+			padding-bottom: 5px;
+		}
+		
+		> .return-to-shop {
+			margin: 20px 0 0;
+			text-align: center;
+			
+			a {
+				@include qodefWooButtonsStyle();
+			}
+		}
+	}
+}

@@ -1,0 +1,282 @@
+/* ==========================================================================
+   Tribe Events Month styles - start
+   ========================================================================== */
+
+.tribe-events-month.qodef-tribe-events-month {
+	
+	.tribe-events-calendar {
+		border: 0 !important;
+		
+		thead {
+			background: url('../img/tribe-events-month.png') center center #fbf9f5;
+			background-size: cover;
+			
+			tr {
+				border: 0;
+				
+				th {
+					background: none;
+					color: $heading-color;
+					border: 0;
+					padding: 13px 0;
+					font-size: 18px;
+					font-family: $heading-font;
+					letter-spacing: .08em;
+					height: 86px;
+					vertical-align: middle;
+					font-weight: 400;
+					text-transform: none;
+					
+					@include qodefScreenSize1440() {
+						font-size: 15px;
+					}
+				}
+			}
+		}
+		
+		tbody {
+			td {
+				height: 180px !important;
+				background: #fbf9f5 !important;
+				border: 2px solid #fff !important;
+				position: relative !important;
+				
+				@include qodefScreenSize1024() {
+					height: 120px !important;
+				}
+				
+				@include qodefScreenSize680() {
+					height: 80px !important;
+				}
+				
+				&:hover {
+					background: #fbf9f5 !important;
+					box-shadow: none !important;
+				}
+				
+				.type-tribe_events {
+					margin: 0 !important;
+					padding: 0 !important;
+					background: none !important;
+					position: initial !important;
+					
+					.tribe-events-month-event-title {
+						font-family: $heading-font !important;
+						font-size: 18px !important;
+						line-height: 1.277em !important;
+						font-weight: 400 !important;
+						padding: 16px 0 !important;
+						text-align: center !important;
+						font-style: normal !important;
+						
+						@include qodefScreenSize1024() {
+							font-size: 13px !important;
+						}
+					}
+				}
+				
+				> div {
+					background: #fff;
+					font-size: 18px;
+					color: $heading-color;
+					text-align: left;
+					padding: 9px 20px;
+					height: 40px;
+					font-weight: 400;
+					font-style: italic;
+					margin: 0 !important;
+					
+					@include qodefScreenSize1024() {
+						font-size: 15px;
+						height: 32px;
+					}
+					
+					@include qodefScreenSize680() {
+						padding: 9px 0;
+						text-align: center;
+					}
+				}
+				
+				&.tribe-events-has-events {
+					> div {
+						background: $main-color;
+						color: #fff;
+						
+						> a {
+							display: block;
+							padding: 9px 20px;
+							background: $main-color;
+							font-size: 18px;
+							font-weight: 400;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	#tribe-events-footer {
+		nav {
+			ul {
+				li {
+					
+					&.tribe-events-nav-previous {
+						a {
+							padding: 0 0 0 40px;
+							
+							&:before {
+								content: "\e066";
+								left: 1px;
+							}
+						}
+					}
+					
+					&.tribe-events-nav-next {
+						a {
+							padding: 0 40px 0 0;
+							
+							&:before {
+								content: "\e068";
+								right: 1px;
+							}
+						}
+					}
+					
+					a {
+						span {
+							font-size: 0;
+						}
+						
+						&:before {
+							font-family: "linea-arrows-10"!important;
+							font-size: 31px;
+							position: absolute;
+							top: 50%;
+							transform: translateY(-50%);
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	.tribe-events-othermonth {
+		background: #fdfcfa !important;
+		
+		> div {
+			background: #fff !important;
+			opacity: 1 !important;
+			color: #cfcece !important;
+		}
+	}
+	
+	/* tooltip */
+	.tribe-events-tooltip {
+		padding: 20px;
+		width: 240px;
+		left: 50% !important;
+		transform: translateX(-50%) !important;
+		box-shadow: $box-shadow;
+		
+		.tribe-events-event-thumb {
+			padding: 0;
+			margin-bottom: 14px;
+		}
+		
+		.entry-title {
+			margin: 0 0 5px 0;
+			font-style: normal;
+		}
+		
+		.tribe-events-abbr {
+			color: $text-color;
+			font-size: 14px;
+			display: block;
+		}
+		
+		.tribe-events-arrow,
+		&.tribe-events-tooltip-flipdown:before {
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+	
+	
+	/* Navigation */
+	
+	#tribe-events-footer {
+		border: 0;
+		padding: 0;
+		margin: 0;
+		
+		nav {
+			padding: 71px 0 2px;
+		}
+	}
+	
+	.tribe-events-sub-nav {
+		
+		.tribe-events-nav-previous {
+			
+			a {
+				padding: 0;
+				padding-left: 40px;
+			}
+		}
+		
+		.tribe-events-nav-next {
+			
+			a {
+				padding: 0;
+				padding-right: 40px;
+			}
+		}
+		
+		a {
+			position: relative;
+			color: $text-color;
+			font-size: 17px;
+			font-weight: 400;
+			
+			@include qodefScreenSize768 {
+				background: none;
+			}
+		}
+	}
+	
+	.qodef-events-single-navigation-icon-prev,
+	.qodef-events-single-navigation-icon-next {
+		position: absolute;
+		font-size: 31px;
+	}
+	
+	.qodef-events-single-navigation-icon-prev {
+		left: 0;
+		top: -4px;
+	}
+	
+	.qodef-events-single-navigation-icon-next {
+		right: 0;
+		top: -4px;
+	}
+	
+	.tribe-events-button {
+		float: left !important;
+		color: #000 !important;
+		background: none !important;
+		font-size: 15px !important;
+		padding: 0 !important;
+		margin: 21px 0 26px !important;
+	}
+	
+	.tribe-events-ical {
+		font-weight: 400 !important;
+		text-transform: initial !important;
+		font-family: $heading-font !important;
+	}
+	
+}
+
+/* ==========================================================================
+   Tribe Events Month styles - end
+   ========================================================================== */

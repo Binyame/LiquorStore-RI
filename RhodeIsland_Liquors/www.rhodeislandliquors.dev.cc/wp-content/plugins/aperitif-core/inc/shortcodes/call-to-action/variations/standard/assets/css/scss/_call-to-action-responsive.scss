@@ -1,0 +1,20 @@
+/* ==========================================================================
+   Call to Action shortcode responsive styles
+   ========================================================================== */
+
+.qodef-call-to-action {
+	
+	&.qodef-layout--standard {
+		@include qodefScreenSize680() {
+			.qodef-m-inner {
+				display: block;
+			}
+			.qodef-m-content {
+				padding-right: 0;
+			}
+			.qodef-m-button {
+				margin-top: 20px;
+			}
+		}
+	}
+}

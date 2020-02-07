@@ -1,0 +1,66 @@
+/* ==========================================================================
+   YITH Quick View Modal responsive styles
+   ========================================================================== */
+
+body {
+	#yith-quick-view-modal {
+		@include qodefScreenSize1440 {
+			.yith-wcqv-wrapper {
+				max-width: 56%;
+			}
+		}
+		
+		@include qodefScreenSize1366 {
+			.yith-wcqv-wrapper {
+				max-width: 50%;
+			}
+			
+			.qodef-woo-product-title {
+				font-size: 28px;
+			}
+			
+			.woocommerce-product-details__short-description {
+				max-height: 100px;
+				overflow: hidden;
+			}
+		}
+		
+		@include qodefScreenSize1280 {
+			.yith-wcqv-wrapper {
+				max-width: 56%;
+			}
+		}
+		
+		@include qodefScreenSize1024 {
+			.yith-wcqv-wrapper {
+				max-width: 75%;
+			}
+		}
+		
+		@include qodefScreenSize768 {
+			.yith-wcqv-wrapper {
+				max-width: 50%;
+			}
+			
+			.woocommerce-product-details__short-description {
+				display: none;
+			}
+		}
+
+		@include qodefScreenSize480 {
+			.yith-wcqv-wrapper {
+				max-width: 75%;
+			}
+			
+			.yith-wcqv-main {
+				max-width: 90%;
+				padding: 20px;
+			}
+
+			#yith-quick-view-close {
+				right: -20px;
+				top: 3px;
+			}
+		}
+	}
+}

@@ -1,0 +1,54 @@
+/* ==========================================================================
+   WooCommerce pagination styles
+   ========================================================================== */
+
+#qodef-woo-page {
+	
+	.woocommerce-pagination {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 18px 0 48px;
+		
+		.page-numbers {
+			position: relative;
+			margin: 0 7px;
+			@include qodefH6Style();
+			color: $text-color;
+
+			* {
+				display: block;
+				line-height: inherit;
+			}
+			
+			&:first-child {
+				margin-left: 0;
+			}
+			&:last-child {
+				margin-right: 0;
+			}
+
+			&.prev,
+			&.next {
+				position: relative;
+				top: 2px;
+				font-size: 31px;
+				line-height: 1;
+			}
+			
+			&.prev {
+				margin-right: 20px;
+			}
+			
+			&.next {
+				margin-left: 20px;
+			}
+			
+			&:hover,
+			&.current {
+				color: $main-color;
+			}
+		}
+	}
+}

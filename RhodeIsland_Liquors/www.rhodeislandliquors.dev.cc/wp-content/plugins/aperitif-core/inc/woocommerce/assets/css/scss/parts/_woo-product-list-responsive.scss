@@ -1,0 +1,59 @@
+/* ==========================================================================
+   WooCommerce global responsive styles
+   ========================================================================== */
+
+.qodef-woo-product-list {
+
+	ul.products {
+		
+		@each $key, $values in $grid-columns-layout-responsive-map {
+			
+			@media only screen and (max-width: map-deep-get($grid-columns-layout-responsive-map, $key, 'responsive-stage')) {
+				
+				@each $column in map-deep-get($grid-columns-layout-responsive-map, $key, 'columns-label') {
+					
+					&.columns-#{$column} {
+						$responsive-break: map-deep-get($grid-columns-layout-responsive-map, $key, 'responsive-break');
+						$column-size: map-deep-get($grid-columns-layout-responsive-map, $key, 'columns-size');
+						$custom-columns-responsive: map-deep-get($grid-columns-layout-responsive-map, $key, 'custom-columns-responsive');
+						
+						@if ($custom-columns-responsive != null) {
+							
+							@if (index(map_get($custom-columns-responsive, 'custom-columns-label'), $column) != null) {
+								$column-size: map_get($custom-columns-responsive, 'custom-columns-size');
+							}
+						}
+						
+						$column-width: 100% / $column-size;
+						
+						> .product {
+							width: $column-width;
+							
+							@if ($responsive-break != 0) {
+								
+								@media only screen and (min-width: $responsive-break) {
+									
+									&:nth-child(#{$column-size}n+1) {
+										clear: both;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 1440px) and (min-width: 1280px) {
+	.qodef-woo-product-list ul.products.columns-6 > .product {
+		width: 16.66667%;
+	}
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 769px) {
+	.qodef-woo-product-list ul.products.columns-4 > .product {
+		width: 50%;
+	}
+}
