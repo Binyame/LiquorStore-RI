@@ -20,13 +20,13 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'rhodeislDBe060s');
+define( 'DB_NAME', 'rhodeislDBbv2vy');
 
 /** MySQL database username */
-define( 'DB_USER', 'rhodeislDBe060s');
+define( 'DB_USER', 'rhodeislDBbv2vy');
 
 /** MySQL database password */
-define( 'DB_PASSWORD', 'TtbMGAldUD');
+define( 'DB_PASSWORD', 'Gdj2DLXi1D');
 
 /** MySQL hostname */
 define( 'DB_HOST', '127.0.0.1');
@@ -46,14 +46,14 @@ define( 'DB_COLLATE', '' );
  *
  * @since 2.6.0
  */
-define( 'AUTH_KEY', 'WxcNJ|so80}cZR!@NGCsOK-wd85!dZ9[pVS_-w,^yIEyj3,^UFvrB7gcU,^nJF}r');
-define( 'SECURE_AUTH_KEY', 'z4okd80[ZRKC~-skG8|hdVO[_oKC5:sldVUB3unjb7>^QIB$vnjF7>YQI,$zrMF');
-define( 'LOGGED_IN_KEY', 'q;iX<*yPIA2uib6<$-shC5:!dVO|~wpG91[hZO[_-SKD5wldW1]~aOH9-thD5;_');
-define( 'NONCE_KEY', 'X.TLA2uib6.+XME*ymf6<|-slC5:ldV:|~sOG5wphW1[~aSK9-tSK#-tlH5;peW');
-define( 'AUTH_SALT', 'RzNC4}kcV0[@vRJ8zskZ4:!dVNG@wog81[I6<jbP{.$qME6qfX3{^yUME$unf7');
-define( 'SECURE_AUTH_SALT', 'vCvkc8}|@ZNG!zskC4:kdVNibTL<*uPIA2ujbT<$XQIA$qjb7<^XQI^yrjE3{nf');
-define( 'LOGGED_IN_SALT', 'N!0|}8Gksz!w@|JRZky*{PXfmXfmy6EMTEMX$.{3,7Ejqy^r$,IQXjUbjr7EM7F');
-define( 'NONCE_SALT', ';m+#x.]Paipamt2AHTELX+.]6<;6Emu+my*<PXePbiq6I3AIQy*<8GOV~|:lw~#[');
+define( 'AUTH_KEY', '15:K8swo!-~~w[_|ZOlphkdh-sw8CZNRRGdVZ:!|C18C4NGJ@s[}|!-@4[dgZskov');
+define( 'SECURE_AUTH_KEY', 'A3QEI$q<{^<{*6A3imfy$uqum^.$MEIbTXbTXqimA;2PEEI6TXP*.+2{;2]EHAq');
+define( 'LOGGED_IN_KEY', 'mi6{;LA<]*6A;imex+tqum*.+LEHaTXaTWpim6;2LDHD6AXLP.x+2#]2#DH5pti~_');
+define( 'NONCE_KEY', 'TTLeXb{.<A26A26PHL*tx;.#<+*6]eiXtxmtxl_#*PSLeiaWaTmpi2];H9DH9DWOS');
+define( 'AUTH_SALT', 'xPDaeWaSptl5:1OD1#:1#DG5ptl~_-w-t#]_SKOhadhZdwpsG58VKOOCGdSW[~59:');
+define( 'SECURE_AUTH_SALT', '|0GJgVcgYrkoB0NRJJCZRz>UNkc0>B,@,$3fczrr$vJBYQYbUrj7{IBBF7UM^v{,');
+define( 'LOGGED_IN_SALT', 'IfXUMQjbf<{I7BI6AXMQ.y$3<{{^7A3nbf$qy$q<{.TXPimfbTXqjm62MEILEH');
+define( 'NONCE_SALT', 'uqA26PHLLAEbPT<+*6{x+q<]*TWLimaaeTqum6A2LPHLPHaeW#*_6;22#]H69ti*.');
 
 /**#@-*/
 
